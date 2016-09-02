@@ -6,4 +6,5 @@ void DisplayFunction(byte ByteData [8])
 				P0 = ByteData[i];
 				CLK();
 			}
+		ResetCounter();
 	}
