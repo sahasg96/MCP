@@ -4,5 +4,7 @@ void DisplayFunction()
 		for(int i=0;i<=rows;i++)
 			{
 				cout<<"Hello";	
+				//CLK Pulse
+				P0 = ByteData[i];
 			}
 	}
