@@ -34,3 +34,6 @@ void CLK()
 		delay(5);
 		clkpin = low;
 	}
+
+
+//Testing
