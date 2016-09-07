@@ -3,38 +3,50 @@
 
 void movement (int length, int &i, int &j)
 {
-	switch (inputPin)  // left,right,up,down
-	{
-    
-    		// UP
-    
-    		case 1: if (!deadend(i+1))
-                		i++;
-             		else
-             			gameOver();
-             	
-             	// RIGHT
-             	
-             	case 2: if (!deadend(j+1))
-                		j++;
-             		else
-             			gameOver();
-             	
-             	// DOWN
-             	
-             	case 3: if (!deadend(i-1))
-                		i--;
-             		else
-             			gameOver();
-             			
-             	// LEFT
-             	
-             	case 4: if (!deadend(j-1))
-                		j--;
-             		else
-             			gameOver();
+	
+		if ( UP == 1 )
+			inputPin = 1;
+		else if ( RIGHT == 1)
+			inputPin = 2;
+		else if ( DOWN == 1)
+			inputPin = 3;
+		else if ( LEFT == 1 )
+			inputPin = 4;
+			
+		// ************** if none of the push buttons are high it will retain ************
+		// ************** the previous value of inputPin *********************************
+		
+		switch (inputPin)  // left,right,up,down
+		{
+	    
+	    		// UP
+	    		case 1: if (!deadend(i+1))
+	                		i++;
+	             		else
+	             			gameOver();
+	             	
+	             	// RIGHT
+	             	case 2: if (!deadend(j+1))
+	                		j++;
+	             		else
+	             			gameOver();
+	             	
+	             	// DOWN
+	             	case 3: if (!deadend(i-1))
+	                		i--;
+	             		else
+	             			gameOver();
+	             			
+	             	// LEFT
+	             	case 4: if (!deadend(j-1))
+	                		j--;
+	             		else
+	             			gameOver();
+	             	
+	             	default: continue();
+	        }
+	        
         }
-        
         //    updateBody(i,j);     // to update co-ordinates of snake body
 }
 
