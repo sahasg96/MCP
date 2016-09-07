@@ -53,7 +53,7 @@ void movement (int length, int &i, int &j)
 
 int deadend (int n)
 {
-	if ( n==-1 || n==9 )
+	if ( n==-1 || n==8 )
 		return 0;
 	else 
 		return 1;
