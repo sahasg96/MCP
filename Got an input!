@@ -1,0 +1,47 @@
+
+// ********* FUNCTION CALLED AS SOON AS WE GET AN INPUT ON A PUSHBUTTON *****************
+
+void movement (int length, int &i, int &j)
+{
+	switch (inputPin)  // left,right,up,down
+	{
+    
+    		// UP
+    
+    		case 1: if (!deadend(i+1))
+                		i++;
+             		else
+             			gameOver();
+             	
+             	// RIGHT
+             	
+             	case 2: if (!deadend(j+1))
+                		j++;
+             		else
+             			gameOver();
+             	
+             	// DOWN
+             	
+             	case 3: if (!deadend(i-1))
+                		i--;
+             		else
+             			gameOver();
+             			
+             	// LEFT
+             	
+             	case 4: if (!deadend(j-1))
+                		j--;
+             		else
+             			gameOver();
+        }
+        
+        //    updateBody(i,j);     // to update co-ordinates of snake body
+}
+
+int deadend (int n)
+{
+	if ( n==-1 || n==9 )
+		return 0;
+	else 
+		return 1;
+}
