@@ -3,7 +3,8 @@
 
 void movement (int length, int &i, int &j)
 {
-	
+	while (1)
+	{
 		if ( UP == 1 )
 			inputPin = 1;
 		else if ( RIGHT == 1)
