@@ -1,4 +1,4 @@
-void DisplayFunction(byte ByteData [8])
+void DisplayFunction(unsigned char ByteData [8])
 	{
 		int rows=8;
 		for(int i=0;i<=rows;i++)
