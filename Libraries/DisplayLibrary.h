@@ -22,9 +22,9 @@ void ResetCounter()
 void CLK()
 	{
 		clkpin = 1;
-		delay(1);
+		delay(100);
 		clkpin = 0;
-		delay(1);         // added
+		delay(100);         // added
 	}
 
 	void ClearDisplay()
