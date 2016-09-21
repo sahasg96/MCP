@@ -9,6 +9,7 @@ This library contains all the generic functions for showing an output and cleari
 ###Ports
 
 ClockPin = P3.7
+
 ResetPin = P3.6
 
 LedOutput = P0
