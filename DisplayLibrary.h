@@ -1,21 +1,22 @@
-void DisplayFunction(unsigned char ByteData [8])
-	{
-		int rows=8;
-		for(int i=0;i<=rows;i++)
+void displayfunction(unsigned char ByteData [])
+{
+		int rows=10;
+		int i = 0;
+		for(i=0;i<rows;i++)
 			{
-				P0 = ByteData[i];   // dispalying 1 row at a time
 				CLK();
+				P0 = ByteData[i];   // dispalying 1 row at a time
+				//delay(1000);
 			}
 		ResetCounter();
 	}
-
 
 void ClearDisplay()
 	{
 		int rows=8;
 		for(int i=0;i<=rows;i++)
 			{
-				P0 = 0x0;
+				P0 = 0x00;
 				CLK();
 			}
 		ResetCounter();
@@ -23,17 +24,17 @@ void ClearDisplay()
 	
 void ResetCounter()
 	{
-		resetpin = high;
+		resetpin = 1;
 		delay(5);
-		resetpin = low;
+		resetpin = 0;
 	}
 	
 void CLK()
 	{
-		clkpin = high;
-		delay(5);
-		clkpin = low;
-		delay(5);         // added
+		clkpin = 1;
+		delay(1);
+		clkpin = 0;
+		delay(1);         // added
 	}
 
 
