@@ -32,7 +32,7 @@
           <SFDFile></SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
-          <BinPath></BinPath>
+          <BinPath>D:\Software\KeiluV5\C51\BIN\</BinPath>
           <IncludePath></IncludePath>
           <LibPath></LibPath>
           <RegisterFilePath></RegisterFilePath>
@@ -362,16 +362,6 @@
         <Group>
           <GroupName>Source Group 1</GroupName>
           <Files>
-            <File>
-              <FileName>CoordinateToByte.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\CoordinateToByte.h</FilePath>
-            </File>
-            <File>
-              <FileName>DisplayLibrary.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\DisplayLibrary.h</FilePath>
-            </File>
             <File>
               <FileName>MCP.c</FileName>
               <FileType>1</FileType>
