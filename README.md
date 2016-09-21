@@ -6,19 +6,19 @@ Micro-Controller Project Lab
 
 This library contains all the generic functions for showing an output and clearing the display and counter.
 
-#delay(time)
+###delay(time)
 Takes an int input, and cretaes a delay.
 
-#ResetCounter()
+###ResetCounter()
 Resets the IC4017 decade counter.
 
-#CLK()
+###CLK()
 Generates a pulse that triggers the IC 4017 decade counter.
 
-#ClearDisplay()
+###ClearDisplay()
 Cleares the display, makes it blank.
 
-#displayfunction(byte dataa[])
+###displayfunction(byte dataa[])
 Takes an array input of the data to be displayed and dislpays it on Port0.
 
 ##Ports
