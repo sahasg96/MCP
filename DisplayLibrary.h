@@ -1,26 +1,16 @@
-void displayfunction(unsigned char ByteData [])
-{
-		int rows=10;
-		int i = 0;
-		for(i=0;i<rows;i++)
-			{
-				CLK();
-				P0 = ByteData[i];   // dispalying 1 row at a time
-				//delay(1000);
-			}
-		ResetCounter();
-	}
+sbit  clkpin = P3^7;
+sbit  resetpin = P3^6;
 
-void ClearDisplay()
-	{
-		int rows=8;
-		for(int i=0;i<=rows;i++)
-			{
-				P0 = 0x00;
-				CLK();
-			}
-		ResetCounter();
-	}
+void delay(unsigned int time)
+{
+	unsigned int i=0;
+	unsigned int j=0;
+	
+	for( i=0;i<=time;i++)
+		for(j=0;j<100;j++);
+}
+
+
 	
 void ResetCounter()
 	{
@@ -37,5 +27,28 @@ void CLK()
 		delay(1);         // added
 	}
 
-
+	void ClearDisplay()
+	{
+		int rows=8;
+		int i = 0;
+		for( i=0;i<=rows;i++)
+			{
+				P0 = 0x00;
+				CLK();
+			}
+		ResetCounter();
+	}
+	
+void displayfunction(unsigned char ByteData [])
+	{
+		int rows=10;
+		int i = 0;
+		for(i=0;i<rows;i++)
+			{
+				CLK();
+				P0 = ByteData[i];   // dispalying 1 row at a time
+				//delay(1000);
+			}
+		ResetCounter();
+	}
 //Testing
