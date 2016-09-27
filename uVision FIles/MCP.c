@@ -14,7 +14,7 @@ unsigned char bytedata [10] = { 0x01,
 																0xaa,
 																0x55};
 
-unsigned int coord [8][10] = {
+unsigned char coord [10][8] = {
 				{0,0,0,0,0,0,0,1},
 				{0,0,0,0,0,0,1,1},
 				{0,0,0,0,0,1,1,1},
