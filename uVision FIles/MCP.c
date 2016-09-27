@@ -1,6 +1,6 @@
 #include<reg52.h>
 #include<DisplayLibrary.h>
-
+#include<CoordinateToByte.h>
 
 
 unsigned char bytedata [10] = { 0x01,
