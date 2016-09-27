@@ -23,6 +23,7 @@ unsigned int coord [8][10] = {0};
 void main()
 {
 	while(1)
+	c2b_all(coord,bytedata);
 	displayfunction(bytedata);
 }
 
