@@ -1,18 +1,19 @@
-unsigned char c2b( int coord[8][10], int row)
+unsigned char c2b( unsigned char coord[10][8], int row)
 	{	
-		unsigned char a = 0;				// This is the temporary byte value which will be returned
-		for (int temp = 0; temp<=8; temp = temp +1)
+		unsigned char a = 0;
+		int temp =0;// This is the temporary byte value which will be returned
+		for (temp = 0; temp<8; temp = temp +1)
 			{	
 				a = a<<1;				// left shift
-				a = a + coord[temp][row];    //adding all the values of the row together
+				a = a + coord[row][temp];    //adding all the values of the row together
 			}
 		return a;
 	}
 
-void c2b_all(int coord[8][10], unsigned char data[])
+void c2b_all(unsigned char coord[10][8], unsigned char databyte[])
 	{
 		for(int temp=0; temp<10; temp = temp +1)
 			{
-				 data[temp] =  c2b(coord[8][8], temp);
+				 databyte[temp] =  c2b(coord, temp);
 			}
 	}
