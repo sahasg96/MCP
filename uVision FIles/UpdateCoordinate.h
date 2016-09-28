@@ -1,16 +1,16 @@
-void UpdateBit ( unsigned char coord[10][8], int x, int y, int value =1)
+void UpdateBit ( unsigned char coord[10][8], int x, int y, int value)
 	{
 		coord[y][x] = value;
 	}
     
-void UpdateRow ( unsigned char coord[10][8],int y,int value =1)
+void UpdateRow ( unsigned char coord[10][8],int y,int value)
 	{
 		int x =0;
 		for(x=0;x<8;x++)
 		coord[y][x] = value;
 	}
 	
-void UpdateColoumn ( unsigned char coord[10][8], int x,int value =1)
+void UpdateColoumn ( unsigned char coord[10][8], int x,int value)
 	{
 		int y=0;
 		for(y=0;y<10;y++)
