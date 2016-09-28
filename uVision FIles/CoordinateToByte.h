@@ -11,8 +11,9 @@ unsigned char c2b( unsigned char coord[10][8], int row)
 	}
 
 void c2b_all(unsigned char coord[10][8], unsigned char databyte[])
-	{
-		for(int temp=0; temp<10; temp = temp +1)
+	{	
+		int temp =0;
+		for( temp=0; temp<10; temp = temp +1)
 			{
 				 databyte[temp] =  c2b(coord, temp);
 			}
