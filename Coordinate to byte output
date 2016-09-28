@@ -1,0 +1,28 @@
+unsigned char P0_output [8];
+void convert ( unsigned char x, unsigned char y )
+{
+    unsigned char i;
+    for ( i=0 ; i<10 ; i++ )
+    {
+        if ( i ! = x )
+        {
+            P0_output[i] = 0xFF;
+            continue;
+        }
+        
+        switch ( y )
+        {
+            case 0: P0_output [i] = 11111110b;  break;       // column 1
+            case 1: P0_output [i] = 11111101b;  break;       // column 2
+            case 2: P0_output [i] = 11111011b;  break;
+            case 3: P0_output [i] = 11110111b;  break;
+            case 4: P0_output [i] = 11101111b;  break;
+            case 5: P0_output [i] = 11011111b;  break;
+            case 6: P0_output [i] = 10111111b;  break;
+            case 7: P0_output [i] = 01111111b;  break;       // column 8
+            default : P0_output [i] = 0xFF;
+        }
+        
+    }
+    
+}
