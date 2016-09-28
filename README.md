@@ -43,6 +43,9 @@ Can update a single row, its location defined by the y input.
 ###UpdateColoumn( int x, int value, byte coord[][])
 Can update a single Coloumn, its location defined by the x input.
 
+###ClearData(byte coord[][])
+Resets all frame data to 0.
+
 ##CoordinateToByte Library
 
 ###c2b(byte coord[][], int row)
