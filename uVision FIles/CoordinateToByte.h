@@ -5,7 +5,7 @@ unsigned char c2b( unsigned char coord[10][8], int row)
 		for (temp = 0; temp<8; temp = temp +1)
 			{	
 				a = a<<1;				// left shift
-				a = a + coord[row][temp];    //adding all the values of the row together
+				a = a + coord[row][7 - temp];    //adding all the values of the row together
 			}
 		return a;
 	}
