@@ -13,6 +13,6 @@ void UpdateRow (int y, int value, unsigned char coord[10][8])
 void UpdateColoumn (int x, int value, unsigned char coord[10][8])
 	{
 		int y=0;
-		for(y=0;y<11;y++)
+		for(y=0;y<10;y++)
 		coord[y][x] = value;
 	}
