@@ -12,14 +12,14 @@ void convert ( unsigned char x, unsigned char y )
         
         switch ( y )
         {
-            case 0: P0_output [i] = 11111110b;  break;       // column 1
-            case 1: P0_output [i] = 11111101b;  break;       // column 2
-            case 2: P0_output [i] = 11111011b;  break;
-            case 3: P0_output [i] = 11110111b;  break;
-            case 4: P0_output [i] = 11101111b;  break;
-            case 5: P0_output [i] = 11011111b;  break;
-            case 6: P0_output [i] = 10111111b;  break;
-            case 7: P0_output [i] = 01111111b;  break;       // column 8
+            case 0: P0_output [i] = 11111110b ^ P0_output [i];  break;       // column 1
+            case 1: P0_output [i] = 11111101b ^ P0_output [i];  break;       // column 2
+            case 2: P0_output [i] = 11111011b ^ P0_output [i];  break;
+            case 3: P0_output [i] = 11110111b ^ P0_output [i];  break;
+            case 4: P0_output [i] = 11101111b ^ P0_output [i];  break;
+            case 5: P0_output [i] = 11011111b ^ P0_output [i];  break;
+            case 6: P0_output [i] = 10111111b ^ P0_output [i];  break;
+            case 7: P0_output [i] = 01111111b ^ P0_output [i];  break;       // column 8
             default : P0_output [i] = 0xFF;
         }
         
