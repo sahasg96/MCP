@@ -30,37 +30,37 @@ void movement (unsigned char length, unsigned char &xH, unsigned char &yH, unsig
 		switch (inputPin)  // left,right,up,down
 		{
 	    		// UP
-	    	case 1: if (!deadend_row(xH-1))
-	                	xH=xH-1;
-	           	    else
-	             		gameOver();
-					break;
-	             	
-	        // RIGHT
-	        case 2: if (!deadend_col(yH+1))
-	                	yH=yH+1;
-	             	else
-	             		gameOver();
-					break;
-	             	
-	        // DOWN
-	        case 3: if (!deadend_row(xH+1))
-	                	xH=xH+1;
-	             	else
-	             		gameOver();
-					break;
-	             			
-	        // LEFT
-	        case 4: if (!deadend_col(yH-1))
-	                	yH=yH-1;
-	             	else
-	             		gameOver();
-					break;
-	  }
-	  
-      Update(xH,yH,1);       // ACTIVATE xH,yH cell
-      Update(xT,yT,0);       // DEACTIVATE xT,yT cell
-   }
+			case 1: if (!deadend_row(xH-1))
+					xH=xH-1;
+				else
+					gameOver();
+				break;
+
+			// RIGHT
+			case 2: if (!deadend_col(yH+1))
+					yH=yH+1;
+				else
+					gameOver();
+				break;
+
+			// DOWN
+			case 3: if (!deadend_row(xH+1))
+					xH=xH+1;
+				else
+					gameOver();
+				break;
+
+			// LEFT
+			case 4: if (!deadend_col(yH-1))
+					yH=yH-1;
+				else
+					gameOver();
+				break;
+			default: gameOver();
+	  	}
+		Update(xH,yH,1);       // ACTIVATE xH,yH cell
+		Update(xT,yT,0);       // DEACTIVATE xT,yT cell
+   	}
 }
 
 bit deadend_row (unsigned char n)
