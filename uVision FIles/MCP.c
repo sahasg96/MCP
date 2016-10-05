@@ -1,6 +1,5 @@
 #include<reg52.h>
 #include<DisplayLibrary.h>
-#include<CoordinateToByte.h>
 #include<UpdateCoordinate.h>
 
 
