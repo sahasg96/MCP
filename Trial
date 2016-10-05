@@ -81,56 +81,50 @@ bit deadend_col (unsigned char n)
 
 void Update (unsigned int x, unsigned int y, bit value)
 {
-  switch(y)
-  {
-    case 0: if (value)
-				coord[x] = coord[x] | 0x80;
-			else
-				coord[x] = coord[x] & ~0x80;
-			break;
-	    
-    case 1: if (value)
-				coord[x] = coord[x] | 0x40;
-			else
-				coord[x] = coord[x] & ~0x40;
-			break;
-	    
-    case 2: if (value)
-				coord[x] = coord[x] | 0x20;
-			else
-				coord[x] = coord[x] & ~0x20;
-			break;
-	    
-    case 3: if (value)
-				coord[x] = coord[x] | 0x10;
-			else
-				coord[x] = coord[x] & ~0x10;
-			break;
-	    
-    case 4: if (value)
-				coord[x] = coord[x] | 0x08;
-			else
-				coord[x] = coord[x] & ~0x08;
-			break;
-	    
-    case 5: if (value)
-				coord[x] = coord[x] | 0x04;
-			else
-				coord[x] = coord[x] & ~0x04;
-			break;
-
-    case 6: if (value)
-				coord[x] = coord[x] | 0x02;
-			else
-				coord[x] = coord[x] & ~0x02;
-			break;
-
-    case 7: if (value)
-				coord[x] = coord[x] | 0x01;
-			else
-				coord[x] = coord[x] & ~0x01;
-			break;
-	  
-    default: gameOver();
-  }
+  	if (value)
+  	{
+		switch(y)
+		{
+			case 0: coord[x] = coord[x] | 0x80;		break;
+					   
+			case 1: coord[x] = coord[x] | 0x40; 	break;
+	
+			case 2: coord[x] = coord[x] | 0x20;		break;
+					
+			case 3: coord[x] = coord[x] | 0x10; 	break;
+					
+			case 4: coord[x] = coord[x] | 0x08; 	break;
+				
+			case 5: coord[x] = coord[x] | 0x04; 	break;
+					
+			case 6: coord[x] = coord[x] | 0x02; 	break;
+						
+			case 7: coord[x] = coord[x] | 0x01; 	break;
+						
+			default: gameOver();
+		  }
+	}
+	else
+	{
+		switch(y)
+		{
+			case 0: coord[x] = coord[x] & ~0x80; 	break;
+						  
+			case 1: coord[x] = coord[x] & ~0x40; 	break;
+						
+			case 2: coord[x] = coord[x] & ~0x20; 	break;
+						
+			case 3: coord[x] = coord[x] & ~0x10; 	break;
+						
+			case 4: coord[x] = coord[x] & ~0x08; 	break;
+						
+			case 5: coord[x] = coord[x] & ~0x04; 	break;
+						
+			case 6: coord[x] = coord[x] & ~0x02; 	break;
+						
+			case 7: coord[x] = coord[x] & ~0x01; 	break;
+						
+			default: gameOver();
+		  }
+	}	
 }
