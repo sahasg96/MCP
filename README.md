@@ -34,13 +34,13 @@ LedOutput = P0
 This Library contains functions to manipulate the bits of the x,y 2D array.
 Top left corner is (0,0) and bottom right corner is (8,10).
 
-###UpdateBit( byte coord[][], int x, int y, int value =1)
+###UpdateBit( byte coord[][], int x, int y, int value)
 Can update a single bit, its location defined by the x, y input.
 
-###UpdateRow( byte coord[][],  int y, int value =1)
+###UpdateRow( byte coord[][],  int y, int value)
 Can update a single row, its location defined by the y input.
 
-###UpdateColoumn( byte coord[][],  int x, int value =1)
+###UpdateColoumn( byte coord[][],  int x, int value)
 Can update a single Coloumn, its location defined by the x input.
 
 ###ClearData(byte coord[][])
