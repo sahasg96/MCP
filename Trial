@@ -48,8 +48,8 @@ void movement (unsigned char length, unsigned char &xH, unsigned char &yH, unsig
 	             		else
 	             			gameOver();
 	    }
-      Activate(coord,xH,yH);       // ACTIVATE xH,yH cell
-      Deactivate(coord,xT,yT);       // DEACTIVATE xT,yT cell
+      Update(xH,yH,1);       // ACTIVATE xH,yH cell
+      Update(xT,yT,0);       // DEACTIVATE xT,yT cell
    }
 }
 
@@ -69,13 +69,58 @@ bit deadend_col (unsigned char n)
 		return 1;
 }
 
-void Activate (unsigned char coord[10], unsigned int x, unsigned int y)
+void Update (unsigned int x, unsigned int y, bit value)
 {
   switch(y)
   {
-    case 0: coord
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-    case 5:
+    case 0: if (value)
+    		coord[x] = coord[x] | 0x80;
+	    else
+	        coord[x] = coord[x] & ~0x80;
+	    break;
+	    
+    case 1: if (value)
+    		coord[x] = coord[x] | 0x40;
+	    else
+	        coord[x] = coord[x] & ~0x40;
+	    break;
+	    
+    case 2: if (value)
+    		coord[x] = coord[x] | 0x20;
+	    else
+	        coord[x] = coord[x] & ~0x20;
+	    break;
+	    
+    case 3: if (value)
+    		coord[x] = coord[x] | 0x10;
+	    else
+	        coord[x] = coord[x] & ~0x10;
+	    break;
+	    
+    case 4: if (value)
+    		coord[x] = coord[x] | 0x08;
+	    else
+	        coord[x] = coord[x] & ~0x08;
+	    break;
+	    
+    case 5: if (value)
+    		coord[x] = coord[x] | 0x04;
+	    else
+	        coord[x] = coord[x] & ~0x04;
+	    break;
+	    
+    case 6: if (value)
+    		coord[x] = coord[x] | 0x02;
+	    else
+	        coord[x] = coord[x] & ~0x02;
+	    break;
+
+    case 7: if (value)
+    		coord[x] = coord[x] | 0x01;
+	    else
+	        coord[x] = coord[x] & ~0x01;
+	    break;
+	  
+    default: gameOver();
+  }
+}
