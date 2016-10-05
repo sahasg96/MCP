@@ -1,25 +1,29 @@
 
-unsigned char xH=0, xT=0, yH=3, yT=0;
-unsigned char coord[10]={0,0,0,0,0,0,0,0,0,0};
-unsigned char inputPin;
+unsigned char xH=0, xT=0, yH=4, yT=0;
+unsigned char coord[10]={0xF0,0,0,0,0,0,0,0,0,0};
+
 sbit UP = P3^0;
 sbit RIGHT = P3^1;
 sbit DOWN = P3^2;
 sbit LEFT = P3^3;
+unsigned char inputPin;
+
+void buttonPressed () interrupt 1
+{
+	if ( UP == 1 )
+		inputPin = 1;
+	else if ( RIGHT == 1 )
+		inputPin = 2;
+	else if ( DOWN == 1 )
+		inputPin = 3;
+	else if ( LEFT == 1 )
+		inputPin = 4;
+}
 
 void movement (unsigned char length, unsigned char &xH, unsigned char &yH, unsigned char &xT, unsigned char &yT)
 {
 	while (1)
 	{
-		if ( UP == 1 )
-			inputPin = 1;
-		else if ( RIGHT == 1 )
-			inputPin = 2;
-		else if ( DOWN == 1 )
-			inputPin = 3;
-		else if ( LEFT == 1 )
-			inputPin = 4;
-			
 		// ************** if none of the push buttons are high it will retain ************
 		// ************** the previous value of inputPin *********************************
 		
