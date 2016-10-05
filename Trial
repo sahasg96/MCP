@@ -1,6 +1,7 @@
 
 unsigned char xH=0, xT=0, yH=3, yT=0;
 unsigned char coord[10]={0,0,0,0,0,0,0,0,0,0};
+unsigned char inputPin;
 sbit UP = P3^0;
 sbit RIGHT = P3^1;
 sbit DOWN = P3^2;
@@ -25,29 +26,34 @@ void movement (unsigned char length, unsigned char &xH, unsigned char &yH, unsig
 		switch (inputPin)  // left,right,up,down
 		{
 	    		// UP
-	    		case 1: if (!deadend_row(xH-1))
+	    	case 1: if (!deadend_row(xH-1))
 	                	xH=xH-1;
-	             		else
-	             			gameOver();
+	           	    else
+	             		gameOver();
+					break;
 	             	
 	        // RIGHT
 	        case 2: if (!deadend_col(yH+1))
 	                	yH=yH+1;
-	             		else
-	             			gameOver();
+	             	else
+	             		gameOver();
+					break;
 	             	
 	        // DOWN
 	        case 3: if (!deadend_row(xH+1))
 	                	xH=xH+1;
-	             		else
-	             			gameOver();
+	             	else
+	             		gameOver();
+					break;
 	             			
 	        // LEFT
 	        case 4: if (!deadend_col(yH-1))
 	                	yH=yH-1;
-	             		else
-	             			gameOver();
-	    }
+	             	else
+	             		gameOver();
+					break;
+	  }
+	  
       Update(xH,yH,1);       // ACTIVATE xH,yH cell
       Update(xT,yT,0);       // DEACTIVATE xT,yT cell
    }
@@ -74,52 +80,52 @@ void Update (unsigned int x, unsigned int y, bit value)
   switch(y)
   {
     case 0: if (value)
-    		coord[x] = coord[x] | 0x80;
-	    else
-	        coord[x] = coord[x] & ~0x80;
-	    break;
+				coord[x] = coord[x] | 0x80;
+			else
+				coord[x] = coord[x] & ~0x80;
+			break;
 	    
     case 1: if (value)
-    		coord[x] = coord[x] | 0x40;
-	    else
-	        coord[x] = coord[x] & ~0x40;
-	    break;
+				coord[x] = coord[x] | 0x40;
+			else
+				coord[x] = coord[x] & ~0x40;
+			break;
 	    
     case 2: if (value)
-    		coord[x] = coord[x] | 0x20;
-	    else
-	        coord[x] = coord[x] & ~0x20;
-	    break;
+				coord[x] = coord[x] | 0x20;
+			else
+				coord[x] = coord[x] & ~0x20;
+			break;
 	    
     case 3: if (value)
-    		coord[x] = coord[x] | 0x10;
-	    else
-	        coord[x] = coord[x] & ~0x10;
-	    break;
+				coord[x] = coord[x] | 0x10;
+			else
+				coord[x] = coord[x] & ~0x10;
+			break;
 	    
     case 4: if (value)
-    		coord[x] = coord[x] | 0x08;
-	    else
-	        coord[x] = coord[x] & ~0x08;
-	    break;
+				coord[x] = coord[x] | 0x08;
+			else
+				coord[x] = coord[x] & ~0x08;
+			break;
 	    
     case 5: if (value)
-    		coord[x] = coord[x] | 0x04;
-	    else
-	        coord[x] = coord[x] & ~0x04;
-	    break;
-	    
+				coord[x] = coord[x] | 0x04;
+			else
+				coord[x] = coord[x] & ~0x04;
+			break;
+
     case 6: if (value)
-    		coord[x] = coord[x] | 0x02;
-	    else
-	        coord[x] = coord[x] & ~0x02;
-	    break;
+				coord[x] = coord[x] | 0x02;
+			else
+				coord[x] = coord[x] & ~0x02;
+			break;
 
     case 7: if (value)
-    		coord[x] = coord[x] | 0x01;
-	    else
-	        coord[x] = coord[x] & ~0x01;
-	    break;
+				coord[x] = coord[x] | 0x01;
+			else
+				coord[x] = coord[x] & ~0x01;
+			break;
 	  
     default: gameOver();
   }
