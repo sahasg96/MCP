@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        09/21/2016  10:47:57  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/05/2016  09:43:27  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -11,7 +11,9 @@ MEMORY MODEL: SMALL
 INPUT MODULES INCLUDED:
   MCP.obj (MCP)
   D:\SOFTWARE\KEILUV5\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\SOFTWARE\KEILUV5\C51\LIB\C51S.LIB (?C?CLDPTR)
   D:\SOFTWARE\KEILUV5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  D:\SOFTWARE\KEILUV5\C51\LIB\C51S.LIB (?C?CSTOPTR)
   D:\SOFTWARE\KEILUV5\C51\LIB\C51S.LIB (?C_INIT)
 
 
@@ -23,51 +25,80 @@ LINK MAP OF MODULE:  MCP (MCP)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     000AH     UNIT         ?DT?MCP
-            DATA    0012H     0007H     UNIT         _DATA_GROUP_
-            DATA    0019H     0002H     UNIT         ?DT?CLEARDISPLAY?MCP
-            IDATA   001BH     0001H     UNIT         ?STACK
+            DATA    0008H     000EH     UNIT         _DATA_GROUP_
+                    0016H     000AH                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.1   0000H.7                *** GAP ***
+            DATA    0021H     005AH     UNIT         ?DT?MCP
+            IDATA   007BH     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
                     0003H     07FDH                  *** GAP ***
             CODE    0800H     008CH     UNIT         ?C_C51STARTUP
-            CODE    088CH     0047H     UNIT         ?PR?_DISPLAYFUNCTION?MCP
-            CODE    08D3H     002DH     UNIT         ?C?LIB_CODE
-            CODE    0900H     0028H     UNIT         ?PR?CLEARDISPLAY?MCP
-            CODE    0928H     0020H     UNIT         ?PR?_DELAY?MCP
-            CODE    0948H     000EH     UNIT         ?PR?CLK?MCP
-            CODE    0956H     000DH     UNIT         ?C_INITSEG
-            CODE    0963H     000CH     UNIT         ?PR?RESETCOUNTER?MCP
-            CODE    096FH     000BH     UNIT         ?PR?MAIN?MCP
+            CODE    088CH     0068H     UNIT         ?C?LIB_CODE
+            CODE    08F4H     0060H     UNIT         ?C_INITSEG
+            CODE    0954H     0047H     UNIT         ?PR?_DISPLAYFUNCTION?MCP
+            CODE    099BH     0046H     UNIT         ?PR?_C2B?MCP
+            CODE    09E1H     0040H     UNIT         ?PR?_C2B_ALL?MCP
+            CODE    0A21H     003EH     UNIT         ?PR?MAIN?MCP
+            CODE    0A5FH     0028H     UNIT         ?PR?CLEARDISPLAY?MCP
+            CODE    0A87H     0028H     UNIT         ?PR?CLEARDATA?MCP
+            CODE    0AAFH     0020H     UNIT         ?PR?_DELAY?MCP
+            CODE    0ACFH     001FH     UNIT         ?PR?_UPDATEROW?MCP
+            CODE    0AEEH     001FH     UNIT         ?PR?_UPDATECOLOUMN?MCP
+            CODE    0B0DH     0011H     UNIT         ?PR?_UPDATEBIT?MCP
+            CODE    0B1EH     000EH     UNIT         ?PR?CLK?MCP
+            CODE    0B2CH     000CH     UNIT         ?PR?RESETCOUNTER?MCP
 
 
 
 OVERLAY MAP OF MODULE:   MCP (MCP)
 
 
-SEGMENT                            DATA_GROUP 
-  +--> CALLED SEGMENT            START    LENGTH
-------------------------------------------------
-?C_C51STARTUP                    -----    -----
+SEGMENT                             BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH     START    LENGTH
+--------------------------------------------------------------------
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/05/2016  09:43:27  PAGE 2
+
+
+?C_C51STARTUP                    -----    -----      -----    -----
   +--> ?PR?MAIN?MCP
   +--> ?C_INITSEG
 
-?PR?MAIN?MCP                     -----    -----
+?PR?MAIN?MCP                     -----    -----      -----    -----
+  +--> ?PR?_C2B_ALL?MCP
+  +--> ?PR?CLEARDISPLAY?MCP
   +--> ?PR?_DISPLAYFUNCTION?MCP
+  +--> ?PR?CLEARDATA?MCP
+  +--> ?PR?_UPDATEBIT?MCP
+  +--> ?PR?_UPDATECOLOUMN?MCP
+  +--> ?PR?_UPDATEROW?MCP
 
-?PR?_DISPLAYFUNCTION?MCP         0012H    0007H
+?PR?_C2B_ALL?MCP                 -----    -----      0008H    0008H
+  +--> ?PR?_C2B?MCP
+
+?PR?_C2B?MCP                     -----    -----      0010H    0006H
+
+?PR?CLEARDISPLAY?MCP             -----    -----      0008H    0002H
   +--> ?PR?CLK?MCP
   +--> ?PR?RESETCOUNTER?MCP
-BL51 BANKED LINKER/LOCATER V6.22                                                      09/21/2016  10:47:57  PAGE 2
 
-
-
-?PR?CLK?MCP                      -----    -----
+?PR?CLK?MCP                      -----    -----      -----    -----
   +--> ?PR?_DELAY?MCP
 
-?PR?RESETCOUNTER?MCP             -----    -----
+?PR?RESETCOUNTER?MCP             -----    -----      -----    -----
   +--> ?PR?_DELAY?MCP
+
+?PR?_DISPLAYFUNCTION?MCP         -----    -----      0008H    0007H
+  +--> ?PR?CLK?MCP
+  +--> ?PR?RESETCOUNTER?MCP
+
+?PR?_UPDATEBIT?MCP               0020H.0  0000H.1    -----    -----
+
+?PR?_UPDATECOLOUMN?MCP           0020H.0  0000H.1    -----    -----
+
+?PR?_UPDATEROW?MCP               0020H.0  0000H.1    -----    -----
 
 
 
@@ -82,19 +113,29 @@ SYMBOL TABLE OF MODULE:  MCP (MCP)
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
   B:00B0H.7       PUBLIC        clkpin
+  C:0B0DH         PUBLIC        _UpdateBit
   D:00A8H         PUBLIC        IE
-  C:0928H         PUBLIC        _delay
+  C:0AAFH         PUBLIC        _delay
+  C:09E1H         PUBLIC        _c2b_all
   D:00B8H         PUBLIC        IP
-  C:096FH         PUBLIC        main
+  D:0021H         PUBLIC        coord
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/05/2016  09:43:27  PAGE 3
+
+
+  C:0ACFH         PUBLIC        _UpdateRow
+  C:0A21H         PUBLIC        main
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:0900H         PUBLIC        ClearDisplay
-  D:0008H         PUBLIC        bytedata
-  C:0948H         PUBLIC        CLK
-  C:088CH         PUBLIC        _displayfunction
+  C:0A5FH         PUBLIC        ClearDisplay
+  C:0AEEH         PUBLIC        _UpdateColoumn
+  D:0071H         PUBLIC        bytedata
+  C:0B1EH         PUBLIC        CLK
+  C:0A87H         PUBLIC        ClearData
+  C:0954H         PUBLIC        _displayfunction
   D:00C8H         PUBLIC        T2CON
-  C:0963H         PUBLIC        ResetCounter
+  C:0B2CH         PUBLIC        ResetCounter
   B:00B0H.6       PUBLIC        resetpin
+  C:099BH         PUBLIC        _c2b
   D:00D0H         PUBLIC        PSW
   -------         PROC          _DELAY
   D:0006H         SYMBOL        time
@@ -102,87 +143,184 @@ SYMBOL TABLE OF MODULE:  MCP (MCP)
   D:0004H         SYMBOL        i
   D:0002H         SYMBOL        j
   -------         ENDDO         
-  C:0928H         LINE#         4
-  C:0928H         LINE#         5
-  C:0928H         LINE#         6
-  C:092BH         LINE#         7
-  C:092BH         LINE#         9
-  C:0932H         LINE#         10
-  C:0947H         LINE#         11
+  C:0AAFH         LINE#         4
+  C:0AAFH         LINE#         5
+  C:0AAFH         LINE#         6
+  C:0AB2H         LINE#         7
+  C:0AB2H         LINE#         9
+  C:0AB9H         LINE#         10
+  C:0ACEH         LINE#         11
   -------         ENDPROC       _DELAY
   -------         PROC          RESETCOUNTER
-  C:0963H         LINE#         15
-  C:0963H         LINE#         16
-  C:0963H         LINE#         17
-  C:0965H         LINE#         18
-  C:096CH         LINE#         19
-  C:096EH         LINE#         20
+  C:0B2CH         LINE#         12
+  C:0B2CH         LINE#         13
+  C:0B2CH         LINE#         14
+  C:0B2EH         LINE#         15
+  C:0B35H         LINE#         16
+  C:0B37H         LINE#         17
   -------         ENDPROC       RESETCOUNTER
   -------         PROC          CLK
-BL51 BANKED LINKER/LOCATER V6.22                                                      09/21/2016  10:47:57  PAGE 3
-
-
-  C:0948H         LINE#         22
-  C:0948H         LINE#         23
-  C:0948H         LINE#         24
-  C:094AH         LINE#         25
-  C:0951H         LINE#         26
-  C:0953H         LINE#         27
+  C:0B1EH         LINE#         19
+  C:0B1EH         LINE#         20
+  C:0B1EH         LINE#         21
+  C:0B20H         LINE#         22
+  C:0B27H         LINE#         23
+  C:0B29H         LINE#         24
   -------         ENDPROC       CLK
   -------         PROC          CLEARDISPLAY
   -------         DO            
-  D:0019H         SYMBOL        rows
+  D:0008H         SYMBOL        rows
   D:0082H         SYMBOL        i
   -------         ENDDO         
-  C:0900H         LINE#         30
-  C:0900H         LINE#         31
-  C:0900H         LINE#         32
-  C:0906H         LINE#         33
-  C:0906H         LINE#         34
-  C:091CH         LINE#         35
-  C:091CH         LINE#         36
-  C:091FH         LINE#         37
-  C:0922H         LINE#         38
-  C:0925H         LINE#         39
+  C:0A5FH         LINE#         27
+  C:0A5FH         LINE#         28
+  C:0A5FH         LINE#         29
+  C:0A65H         LINE#         30
+  C:0A65H         LINE#         31
+  C:0A7BH         LINE#         32
+  C:0A7BH         LINE#         33
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/05/2016  09:43:27  PAGE 4
+
+
+  C:0A7EH         LINE#         34
+  C:0A81H         LINE#         35
+  C:0A84H         LINE#         36
   -------         ENDPROC       CLEARDISPLAY
   -------         PROC          _DISPLAYFUNCTION
-  D:0012H         SYMBOL        ByteData
+  D:0008H         SYMBOL        ByteData
   -------         DO            
-  D:0015H         SYMBOL        rows
-  D:0017H         SYMBOL        i
+  D:000BH         SYMBOL        rows
+  D:000DH         SYMBOL        i
   -------         ENDDO         
-  C:088CH         LINE#         42
-  C:0892H         LINE#         43
-  C:0892H         LINE#         44
-  C:0898H         LINE#         45
-  C:089DH         LINE#         46
-  C:08B2H         LINE#         47
-  C:08B2H         LINE#         48
-  C:08B5H         LINE#         49
-  C:08C6H         LINE#         51
-  C:08D0H         LINE#         52
+  C:0954H         LINE#         39
+  C:095AH         LINE#         40
+  C:095AH         LINE#         41
+  C:0960H         LINE#         42
+  C:0965H         LINE#         43
+  C:097AH         LINE#         44
+  C:097AH         LINE#         45
+  C:097DH         LINE#         46
+  C:098EH         LINE#         48
+  C:0998H         LINE#         49
   -------         ENDPROC       _DISPLAYFUNCTION
+  -------         PROC          _C2B
+  D:0010H         SYMBOL        coord
+  D:0013H         SYMBOL        row
+  -------         DO            
+  D:0015H         SYMBOL        a
+  D:0004H         SYMBOL        temp
+  -------         ENDDO         
+  C:099BH         LINE#         1
+  C:09A5H         LINE#         2
+  C:09A5H         LINE#         3
+  C:09A8H         LINE#         4
+  C:09AAH         LINE#         5
+  C:09AAH         LINE#         6
+  C:09AAH         LINE#         7
+  C:09B0H         LINE#         8
+  C:09D3H         LINE#         9
+  C:09DEH         LINE#         10
+  C:09E0H         LINE#         11
+  -------         ENDPROC       _C2B
+  -------         PROC          _C2B_ALL
+  D:0008H         SYMBOL        coord
+  D:000BH         SYMBOL        databyte
+  -------         DO            
+  D:000EH         SYMBOL        temp
+  -------         ENDDO         
+  C:09E1H         LINE#         13
+  C:09E7H         LINE#         14
+  C:09E7H         LINE#         15
+  C:09ECH         LINE#         16
+  C:09F0H         LINE#         17
+  C:09F0H         LINE#         18
+  C:0A0DH         LINE#         19
+  C:0A20H         LINE#         20
+  -------         ENDPROC       _C2B_ALL
+  -------         PROC          _UPDATEBIT
+  D:0006H         SYMBOL        x
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/05/2016  09:43:27  PAGE 5
+
+
+  D:0004H         SYMBOL        y
+  B:0020H.0       SYMBOL        value
+  C:0B0DH         LINE#         13
+  C:0B0DH         LINE#         14
+  C:0B0DH         LINE#         15
+  C:0B1DH         LINE#         16
+  -------         ENDPROC       _UPDATEBIT
+  -------         PROC          _UPDATEROW
+  D:0006H         SYMBOL        y
+  B:0020H.0       SYMBOL        value
+  -------         DO            
+  D:0004H         SYMBOL        x
+  -------         ENDDO         
+  C:0ACFH         LINE#         18
+  C:0ACFH         LINE#         19
+  C:0ACFH         LINE#         20
+  C:0AD2H         LINE#         21
+  C:0AD2H         LINE#         22
+  C:0AEDH         LINE#         23
+  -------         ENDPROC       _UPDATEROW
+  -------         PROC          _UPDATECOLOUMN
+  D:0006H         SYMBOL        x
+  B:0020H.0       SYMBOL        value
+  -------         DO            
+  D:0004H         SYMBOL        y
+  -------         ENDDO         
+  C:0AEEH         LINE#         25
+  C:0AEEH         LINE#         26
+  C:0AEEH         LINE#         27
+  C:0AF1H         LINE#         28
+  C:0AF1H         LINE#         29
+  C:0B0CH         LINE#         30
+  -------         ENDPROC       _UPDATECOLOUMN
+  -------         PROC          CLEARDATA
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0A87H         LINE#         32
+  C:0A87H         LINE#         33
+  C:0A87H         LINE#         35
+  C:0A8AH         LINE#         36
+  C:0A8DH         LINE#         37
+  C:0AAEH         LINE#         38
+  -------         ENDPROC       CLEARDATA
   -------         PROC          MAIN
-  C:096FH         LINE#         21
-  C:096FH         LINE#         22
-  C:096FH         LINE#         23
-  C:096FH         LINE#         24
+  C:0A21H         LINE#         17
+  C:0A21H         LINE#         18
+  C:0A21H         LINE#         19
+  C:0A21H         LINE#         20
+  C:0A21H         LINE#         21
+  C:0A33H         LINE#         22
+  C:0A36H         LINE#         23
+  C:0A3FH         LINE#         24
+  C:0A42H         LINE#         25
+  C:0A4FH         LINE#         26
+  C:0A56H         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/05/2016  09:43:27  PAGE 6
+
+
+  C:0A5DH         LINE#         29
   -------         ENDPROC       MAIN
   -------         ENDMOD        MCP
 
+  -------         MODULE        ?C?CLDPTR
+  C:088CH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
   -------         MODULE        ?C?CLDOPTR
-  C:08D3H         PUBLIC        ?C?CLDOPTR
+  C:08A5H         PUBLIC        ?C?CLDOPTR
   -------         ENDMOD        ?C?CLDOPTR
 
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?CLEARDISPLAY?MCP
+  -------         MODULE        ?C?CSTOPTR
+  C:08D2H         PUBLIC        ?C?CSTOPTR
+  -------         ENDMOD        ?C?CSTOPTR
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00C0H BYTE ( 9%) *
-BL51 BANKED LINKER/LOCATER V6.22                                                      09/21/2016  10:47:57  PAGE 4
-
-
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0243H BYTE (28%) *
 ******************************************************************************
 
-Program Size: data=28.0 xdata=0 code=381
-LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
+Program Size: data=113.1 xdata=0 code=827
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

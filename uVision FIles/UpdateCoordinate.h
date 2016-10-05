@@ -1,23 +1,35 @@
-void UpdateBit ( unsigned char coord[10][8], int x, int y, int value)
+extern unsigned char coord [10][8] = {
+				{0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0}};
+
+void UpdateBit (int x, int y, bit value)
 	{
 		coord[y][x] = value;
 	}
     
-void UpdateRow ( unsigned char coord[10][8],int y,int value)
+void UpdateRow (int y, bit value)
 	{
 		int x =0;
 		for(x=0;x<8;x++)
 		coord[y][x] = value;
 	}
 	
-void UpdateColoumn ( unsigned char coord[10][8], int x,int value)
+void UpdateColoumn ( int x, bit value)
 	{
 		int y=0;
 		for(y=0;y<10;y++)
 		coord[y][x] = value;
 	}
 
-void ClearData(unsigned char coord[10][8])
+void ClearData()
 	{
 		int i,j;
 		for(i=0;i<10;i++)

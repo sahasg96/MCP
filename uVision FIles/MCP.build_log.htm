@@ -19,17 +19,50 @@ CPU DLL:         S8051.DLL V3.95.0.0
 Dialog DLL:      DP51.DLL V2.62.0.1 
 <h2>Project:</h2>
 C:\Users\Sahas Gembali\Documents\GitHub\MCP\uVision FIles\MCP.uvproj
-Project File Date:  09/21/2016
+Project File Date:  10/05/2016
 
 <h2>Output:</h2>
 Build target 'Target 1'
 compiling MCP.c...
 linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?CLEARDISPLAY?MCP
-Program Size: data=28.0 xdata=0 code=381
+Program Size: data=113.1 xdata=0 code=827
+creating hex file from "MCP"...
+"MCP" - 0 Error(s), 0 Warning(s).
+: data=115.1 xdata=0 code=822
 creating hex file from "MCP"...
 "MCP" - 0 Error(s), 1 Warning(s).
-</pre>
-</body>
-</html>
+6: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UPDATEROW?MCP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UPDATECOLOUMN?MCP
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLEARDATA?MCP
+Program Size: data=115.3 xdata=0 code=797
+creating hex file from "MCP"...
+"MCP" - 0 Error(s), 5 Warning(s).
+SS SPACE OVERFLOW
+    SPACE:   IDATA   
+    SEGMENT: ?STACK
+    LENGTH:  0001H
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   IDATA   
+    SEGMENT: ?STACK
+    LENGTH:  0001H
+*** ERROR L119: REFERENCE MADE TO ERRONEOUS SEGMENT
+    SEGMENT: ?C_C51STARTUP
+    MODULE:  D:\SOFTWARE\KEILUV5\C51\LIB\C51S.LIB (?C_STARTUP)
+    ADDRESS: 0808H
+Program Size: data=134.3 xdata=0 code=960
+Target not created.
+E
+    SEGMENT: ?DT?_UPDATECOLOUMN?MCP
+*** ERROR L119: REFERENCE MADE TO ERRONEOUS SEGMENT
+    SEGMENT: ?C_C51STARTUP
+    MODULE:  D:\SOFTWARE\KEILUV5\C51\LIB\C51S.LIB (?C_STARTUP)
+    ADDRESS: 0808H
+Program Size: data=140.0 xdata=0 code=911
+Target not created.
+51\LIB\C51S.LIB (?C_STARTUP)
+    ADDRESS: 0808H
+Program Size: data=147.0 xdata=0 code=938
+Target not created.
