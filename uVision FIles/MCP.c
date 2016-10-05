@@ -19,10 +19,8 @@ unsigned char bytedata [10] = { 0x00,
 	while(1)
 	{
 		c2b_all(coord,bytedata);
-		ClearDisplay0();
 		displayfunction(bytedata);
-		ClearData();
-		UpdateBit(4,2,1);
+		//UpdateBit(4,2,1);
 		UpdateColoumn(1,1);
 		UpdateRow(3,1);
 		
