@@ -367,11 +367,6 @@
               <FileType>1</FileType>
               <FilePath>.\MCP.c</FilePath>
             </File>
-            <File>
-              <FileName>DisplayLibrary.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\DisplayLibrary.h</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>

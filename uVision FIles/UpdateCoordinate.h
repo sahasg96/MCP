@@ -1,4 +1,4 @@
-extern unsigned char coord [10][8] = {
+unsigned char coord [10][8] = {
 				{0,0,0,0,0,0,0,0},
 				{0,0,0,0,0,0,0,0},
 				{0,0,0,0,0,0,0,0},
