@@ -21,6 +21,10 @@ Cleares the display, makes it blank.
 ###displayfunction(byte data[])
 Takes an array input of the data to be displayed and dislpays it on Port0.
 
+
+###c2b_all(byte coord[][], byte databyte[])
+Converts all the rows and modifies the value of the byte data array.
+
 ##Ports
 
 ClockPin = P3.7
@@ -34,22 +38,14 @@ LedOutput = P0
 This Library contains functions to manipulate the bits of the x,y 2D array.
 Top left corner is (0,0) and bottom right corner is (8,10).
 
-###UpdateBit( byte coord[][], int x, int y, int value)
+###UpdateBit(int x, int y, bit value)
 Can update a single bit, its location defined by the x, y input.
 
-###UpdateRow( byte coord[][],  int y, int value)
+###UpdateRow(int y, bit value)
 Can update a single row, its location defined by the y input.
 
-###UpdateColoumn( byte coord[][],  int x, int value)
+###UpdateColoumn(int x, bit value)
 Can update a single Coloumn, its location defined by the x input.
 
-###ClearData(byte coord[][])
+###ClearData()
 Resets all frame data to 0.
-
-##CoordinateToByte Library
-
-###c2b(byte coord[][], int row)
-Converts a single row of the coord 2D array to a byte and returns it.
-
-###c2b_all(byte coord[][], byte databyte[])
-Converts all the rows and modifies the value of the byte data array.
