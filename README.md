@@ -22,7 +22,7 @@ Cleares the display, makes it blank.
 Takes an array input of the data to be displayed and dislpays it on Port0.
 
 
-###c2b_all(byte coord[][], byte databyte[])
+###c2b_all(byte coord[], byte databyte[])
 Converts all the rows and modifies the value of the byte data array.
 
 ##Ports
