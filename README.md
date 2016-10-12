@@ -42,3 +42,6 @@ Can update a single Coloumn, its location defined by the x input.
 
 ###ClearData()
 Resets all frame data to 0.
+
+###UpdateBorder(bit value)
+Creates a border, value switches it on or off.
