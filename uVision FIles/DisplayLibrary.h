@@ -16,13 +16,6 @@ void ResetCounter()
 		resetpin = 0;
 	}
 
-void CLK()
-	{
-		clkpin = 1;
-		delay(100);
-		clkpin = 0;
-		delay(100);         // added
-	}
 
 	void ClearDisplay()
 	{
