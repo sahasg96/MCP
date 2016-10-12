@@ -31,15 +31,17 @@ void timer0() interrupt 1
 
 	void main()
 {
+	/***** Initial Config for timer *******/
 	IE = 0x82;
-	TMOD = 0x02;
+	TMOD = 0x02;           
 	TH0 = 0x00;
 	TR0 = 1;
-
+//////////////////////////////////////////////
 	while(1)
 	{
 		c2b_all(coord,bytedata);
 		//displayfunction(bytedata);
+		ClearData();
 		UpdateBit(4,2,1);
 		UpdateColoumn(1,1);
 		UpdateRow(3,1);
