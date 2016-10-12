@@ -2,7 +2,7 @@
 #include<DisplayLibrary.h>
 #include<UpdateCoordinate.h>
 
-
+unsigned int n = 0;
 unsigned char bytedata [10] = { 0x00,
 																0x00,
 																0x00,
@@ -13,18 +13,36 @@ unsigned char bytedata [10] = { 0x00,
 																0x00,
 																0x00,
 																0x00};
+
+void timer0() interrupt 1
+{
+	P0 = bytedata[n];
+	clkpin = ~clkpin;
+	n=n+1;
+	if(n==10)
+	{
+				n=0;
+				resetpin=1;
+				delay(5);
+				resetpin=0;
+	}
+
+}
+
 	void main()
 {
+	IE = 0x82;
+	TMOD = 0x02;
+	TH0 = 0x00;
+	TR0 = 1;
+
 	while(1)
 	{
 		c2b_all(coord,bytedata);
-		displayfunction(bytedata);
+		//displayfunction(bytedata);
 		UpdateBit(4,2,1);
 		UpdateColoumn(1,1);
 		UpdateRow(3,1);
-		
+
 	}
 }
-
-
-
