@@ -38,7 +38,7 @@ void ext0() interrupt 0
 void main()
 	{
 	/***** Initial Config for timer *******/
-		IE = 0x82;
+		IE = 0x83;
 		TMOD = 0x02;
 		TH0 = 0x00;
 		TR0 = 1;
