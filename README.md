@@ -12,15 +12,8 @@ Takes an int input, and cretaes a delay.
 ###ResetCounter()
 Resets the IC4017 decade counter.
 
-###CLK()
-Generates a pulse that triggers the IC 4017 decade counter.
-
 ###ClearDisplay()
 Cleares the display, makes it blank.
-
-###displayfunction(byte data[])
-Takes an array input of the data to be displayed and dislpays it on Port0.
-
 
 ###c2b_all(byte coord[], byte databyte[])
 Converts all the rows and modifies the value of the byte data array.
