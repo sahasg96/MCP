@@ -81,3 +81,11 @@ void ClearData()
 		for(i=0;i<10;i++)
 			coord[i] = 0x00;
 	}
+
+void UpdateBorder(bit value)
+{
+	UpdateRow(0,value);
+	UpdateRow(9,value);
+	UpdateColoumn(0,value);
+	UpdateColoumn(7,value);
+}
