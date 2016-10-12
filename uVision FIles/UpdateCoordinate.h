@@ -10,7 +10,6 @@ unsigned char coord [10] = {
 				0x00,
 				0x00};
 
-
 void UpdateRow (int y, bit value)
 	{
 		if(value==1)
@@ -24,7 +23,7 @@ void UpdateBit (int x, int y, bit value)
 		if (value==1)
 			{
 					switch(x)
-					{
+						{
 						case 7: coord[y] = coord[y]|0x01;
 							break;
 						case 6:coord[y] = coord[y]|0x02;
@@ -46,7 +45,7 @@ void UpdateBit (int x, int y, bit value)
 				else
 					{
 							switch(x)
-							{
+								{
 								case 7: coord[y] = coord[y]|0xFE;
 									break;
 								case 6:coord[y] = coord[y]|0xFD;
@@ -67,7 +66,6 @@ void UpdateBit (int x, int y, bit value)
 						}
 	}
 
-
 void UpdateColoumn ( int x, bit value)
 	{
 		int i;
@@ -83,7 +81,7 @@ void ClearData()
 	}
 
 void UpdateBorder(bit value)
-{
+	{
 	UpdateRow(0,value);
 	UpdateRow(9,value);
 	UpdateColoumn(0,value);
