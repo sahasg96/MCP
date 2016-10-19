@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 08:32:01 PAGE 1   
+C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 09:01:35 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MCP
@@ -39,7 +39,7 @@ line level    source
   30   1      
   31   1        }
   32          
-  33          void ext0() interrupt 0
+  33          void ext1() interrupt 2
   34            {
   35   1          UpdateInput();
   36   1        }
@@ -47,7 +47,7 @@ line level    source
   38          void main()
   39            {
   40   1        /***** Initial Config for timer *******/
-  41   1          IE = 0x83;
+  41   1          IE = 0x86;
   42   1          TMOD = 0x02;
   43   1          TH0 = 0x00;
   44   1          TR0 = 1;
@@ -61,19 +61,20 @@ line level    source
   52   2              UpdateBit(4,2,1);
   53   2              UpdateColoumn(1,1);
   54   2              UpdateRow(3,1);
-  55   2              ClearInputFlag();
-C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 08:32:01 PAGE 2   
+  55   2              
+C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 09:01:35 PAGE 2   
 
-  56   2      
-  57   2              
-  58   2            }
-  59   1          }
+  56   2            //  ClearInputFlag();
+  57   2      
+  58   2              
+  59   2            }
+  60   1          }
 *** WARNING C290 IN LINE 24 OF MCP.c: missing return value
 *** WARNING C290 IN LINE 29 OF MCP.c: missing return value
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    684    ----
+   CODE SIZE        =    681    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

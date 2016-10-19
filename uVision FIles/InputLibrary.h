@@ -1,7 +1,7 @@
-sbit P_UP = P3^7;
-sbit P_DOWN = P3^6;
-sbit P_RIGHT = P3^5;
-sbit P_LEFT = P3^4;
+sbit P_UP = P3^6;
+sbit P_DOWN = P3^5;
+sbit P_RIGHT = P3^4;
+sbit P_LEFT = P3^2;
 
 bit UP=0;
 bit DOWN=0;

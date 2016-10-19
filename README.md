@@ -14,7 +14,7 @@ The InputFlag is set to 1. The data variables will not be updated irrespective o
 This library contains all the generic functions for showing an output and clearing the display and counter.
 
 ###delay(time)
-Takes an int input, and cretaes a delay.
+Takes an int input, and Creates a delay.
 
 ###ResetCounter()
 Resets the IC4017 decade counter.
@@ -27,11 +27,13 @@ Converts all the rows and modifies the value of the byte data array.
 
 ##Ports
 
-ClockPin = P3.7
+ClockPin = P2.7
 
-ResetPin = P3.6
+ResetPin = P2.6
 
 LedOutput = P0
+
+External Input interrupt = P3.3
 
 ##UpdateCoordinate Library
 

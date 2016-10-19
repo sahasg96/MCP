@@ -1,5 +1,5 @@
-sbit  clkpin = P3^7;
-sbit  resetpin = P3^6;
+sbit  clkpin = P2^7;
+sbit  resetpin = P2^6;
 
 void delay(unsigned int time)
 	{
