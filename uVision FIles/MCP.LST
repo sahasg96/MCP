@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 10:28:03 PAGE 1   
+C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 10:42:34 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MCP
@@ -62,24 +62,24 @@ line level    source
   53   1          TH0 = 0x00;
   54   1          TR0 = 1;
   55   1        //////////////////////////////////////////////
-C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 10:28:03 PAGE 2   
+C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 10:42:34 PAGE 2   
 
   56   1          while(1)
   57   1            {
   58   2              c2b_all(coord,bytedata);
   59   2              /*The game function is below*/
   60   2              
-  61   2      /*      UpdateBorder(1);
-  62   2              UpdateColoumn(5,1);
+  61   2              //UpdateBorder(1);
+  62   2              UpdateColoumn(7,1);
   63   2              UpdateColoumn(1,1);
   64   2              UpdateRow(5,1);
   65   2              UpdateRow(1,1);
   66   2              UpdateBit(2,2,1);
   67   2              UpdateBit(2,3,1);
   68   2              UpdateBit(2,4,1);
-  69   2              UpdateBit(2,5,1);  */
+  69   2              UpdateBit(2,5,1); 
   70   2              
-  71   2              movement(inputPin,bytedata);
+  71   2            //  movement(inputPin,bytedata);
   72   2              
   73   2            }
   74   1          }
@@ -88,7 +88,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    929    ----
+   CODE SIZE        =    977    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

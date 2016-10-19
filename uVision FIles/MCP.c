@@ -58,17 +58,17 @@ void main()
 				c2b_all(coord,bytedata);
 				/*The game function is below*/
 				
-/*			UpdateBorder(1);
-				UpdateColoumn(5,1);
+				//UpdateBorder(1);
+				UpdateColoumn(7,1);
 				UpdateColoumn(1,1);
 				UpdateRow(5,1);
 				UpdateRow(1,1);
 				UpdateBit(2,2,1);
 				UpdateBit(2,3,1);
 				UpdateBit(2,4,1);
-				UpdateBit(2,5,1);  */
+				UpdateBit(2,5,1); 
 				
-				movement(inputPin,bytedata);
+			//	movement(inputPin,bytedata);
 				
 			}
 		}
