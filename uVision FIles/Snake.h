@@ -7,7 +7,6 @@ yH=3;
 yT=0;
 
 bit gameOver = 0;
-inputPin=2;
 
 int deadend_row (int n)
 {
@@ -24,7 +23,7 @@ int deadend_col (int n)
 		return 1;
 }
 
-void movement ()
+void movement (unsigned char inputPin, unsigned char bytedata[])
 {
 	while (!gameOver)
 	{
@@ -63,5 +62,6 @@ void movement ()
 
 		UpdateBit(xH,yH,1);
 		UpdateBit(xT,yT,0);
-        }
+    c2b_all(coord,bytedata);    
+	}
 }

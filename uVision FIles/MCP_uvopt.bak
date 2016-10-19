@@ -128,7 +128,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDP51</Key>
-          <Name>(98=150,104,483,388,1)(82=1137,114,1335,219,1)(83=1053,298,1251,403,0)(84=1142,267,1340,372,1)(85=1099,250,1297,355,0)(80=-1,-1,-1,-1,0)(91=501,116,701,381,1)(92=-1,-1,-1,-1,0)</Name>
+          <Name>(98=150,104,483,388,0)(82=1137,114,1335,219,1)(83=1053,298,1251,403,0)(84=1142,267,1340,372,1)(85=887,270,1085,375,1)(80=-1,-1,-1,-1,0)(91=501,116,701,381,0)(92=-1,-1,-1,-1,0)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
       <Breakpoint/>
@@ -157,6 +157,31 @@
           <count>4</count>
           <WinNumber>1</WinNumber>
           <ItemText>coord</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>InputFlag</ItemText>
+        </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>UP</ItemText>
+        </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>DOWN</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>LEFT</ItemText>
+        </Ww>
+        <Ww>
+          <count>9</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>RIGHT</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>

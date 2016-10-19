@@ -2,9 +2,9 @@
 #include<DisplayLibrary.h>
 #include<UpdateCoordinate.h>
 #include<InputLibrary.h>
-#include <Snake.h>
+#include<Snake.h>
 
-unsigned int inputPin;
+unsigned char inputPin;
 unsigned int n = 0;
 unsigned char bytedata [10] = { 0x00,
 																0x00,
@@ -32,7 +32,7 @@ void timer0() interrupt 1
 
 	}
 
-void ext0() interrupt 0  //P3.2
+void ext0() interrupt 2  //P3.2
 	{
 		UpdateInput();
 		if ( UP == 1 )
@@ -48,7 +48,7 @@ void ext0() interrupt 0  //P3.2
 void main()
 	{
 	/***** Initial Config for timer *******/
-		IE = 0x83;
+		IE = 0x86;
 		TMOD = 0x02;
 		TH0 = 0x00;
 		TR0 = 1;
@@ -57,6 +57,18 @@ void main()
 			{
 				c2b_all(coord,bytedata);
 				/*The game function is below*/
-				movement();
+				
+/*			UpdateBorder(1);
+				UpdateColoumn(5,1);
+				UpdateColoumn(1,1);
+				UpdateRow(5,1);
+				UpdateRow(1,1);
+				UpdateBit(2,2,1);
+				UpdateBit(2,3,1);
+				UpdateBit(2,4,1);
+				UpdateBit(2,5,1);  */
+				
+				movement(inputPin,bytedata);
+				
 			}
 		}

@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 09:01:35 PAGE 1   
+C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 10:28:03 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MCP
@@ -11,76 +11,90 @@ line level    source
    2          #include<DisplayLibrary.h>
    3          #include<UpdateCoordinate.h>
    4          #include<InputLibrary.h>
-   5          
-   6          unsigned int n = 0;
-   7          unsigned char bytedata [10] = { 0x00,
-   8                                          0x00,
-   9                                          0x00,
+   5          #include<Snake.h>
+   6          
+   7          unsigned char inputPin;
+   8          unsigned int n = 0;
+   9          unsigned char bytedata [10] = { 0x00,
   10                                          0x00,
   11                                          0x00,
   12                                          0x00,
   13                                          0x00,
   14                                          0x00,
   15                                          0x00,
-  16                                          0x00};
-  17          
-  18          void timer0() interrupt 1
-  19            {
-  20   1        P0 = bytedata[n];
-  21   1        clkpin = ~clkpin;
-  22   1        n=n+1;
-  23   1        if(n==10)
-  24   1        {
-  25   2              n=0;
-  26   2              resetpin=1;
-  27   2              delay(5);
-  28   2              resetpin=0;
-  29   2        }
-  30   1      
-  31   1        }
-  32          
-  33          void ext1() interrupt 2
-  34            {
-  35   1          UpdateInput();
-  36   1        }
-  37          
-  38          void main()
-  39            {
-  40   1        /***** Initial Config for timer *******/
-  41   1          IE = 0x86;
-  42   1          TMOD = 0x02;
-  43   1          TH0 = 0x00;
-  44   1          TR0 = 1;
-  45   1          //////////////////////////////////////////////
-  46   1          while(1)
-  47   1            {
-  48   2              c2b_all(coord,bytedata);
-  49   2      
-  50   2              /*The game function is below*/
-  51   2              ClearData();
-  52   2              UpdateBit(4,2,1);
-  53   2              UpdateColoumn(1,1);
-  54   2              UpdateRow(3,1);
-  55   2              
-C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 09:01:35 PAGE 2   
+  16                                          0x00,
+  17                                          0x00,
+  18                                          0x00};
+  19          
+  20          void timer0() interrupt 1
+  21            {
+  22   1        P0 = bytedata[n];
+  23   1        clkpin = ~clkpin;
+  24   1        n=n+1;
+  25   1        if(n==10)
+  26   1        {
+  27   2              n=0;
+  28   2              resetpin=1;
+  29   2              delay(5);
+  30   2              resetpin=0;
+  31   2        }
+  32   1      
+  33   1        }
+  34          
+  35          void ext0() interrupt 2  //P3.2
+  36            {
+  37   1          UpdateInput();
+  38   1          if ( UP == 1 )
+  39   1            inputPin = 1;
+  40   1          else if ( RIGHT == 1 )
+  41   1            inputPin = 2;
+  42   1          else if ( DOWN == 1 )
+  43   1            inputPin = 3;
+  44   1          else if ( LEFT == 1 )
+  45   1            inputPin = 4;
+  46   1        }
+  47          
+  48          void main()
+  49            {
+  50   1        /***** Initial Config for timer *******/
+  51   1          IE = 0x86;
+  52   1          TMOD = 0x02;
+  53   1          TH0 = 0x00;
+  54   1          TR0 = 1;
+  55   1        //////////////////////////////////////////////
+C51 COMPILER V9.53.0.0   MCP                                                               10/19/2016 10:28:03 PAGE 2   
 
-  56   2            //  ClearInputFlag();
-  57   2      
-  58   2              
-  59   2            }
-  60   1          }
+  56   1          while(1)
+  57   1            {
+  58   2              c2b_all(coord,bytedata);
+  59   2              /*The game function is below*/
+  60   2              
+  61   2      /*      UpdateBorder(1);
+  62   2              UpdateColoumn(5,1);
+  63   2              UpdateColoumn(1,1);
+  64   2              UpdateRow(5,1);
+  65   2              UpdateRow(1,1);
+  66   2              UpdateBit(2,2,1);
+  67   2              UpdateBit(2,3,1);
+  68   2              UpdateBit(2,4,1);
+  69   2              UpdateBit(2,5,1);  */
+  70   2              
+  71   2              movement(inputPin,bytedata);
+  72   2              
+  73   2            }
+  74   1          }
 *** WARNING C290 IN LINE 24 OF MCP.c: missing return value
 *** WARNING C290 IN LINE 29 OF MCP.c: missing return value
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    681    ----
+   CODE SIZE        =    929    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     22      10
+   DATA SIZE        =     31      14
    IDATA SIZE       =   ----    ----
-   BIT SIZE         =      5       4
+   BIT SIZE         =      6       4
 END OF MODULE INFORMATION.
 
 
