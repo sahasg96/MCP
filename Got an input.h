@@ -6,10 +6,13 @@ xT=0;
 yH=3;
 yT=0;
 
+bit gameOver = 0;
+
 void movement (int length, int &xH, int &yH, int &xT, int &yT)
 {
-	while (1)
+	while (!gameOver)
 	{
+		/*
 		if ( UP == 1 )
 			inputPin = 1;
 		else if ( RIGHT == 1 )
@@ -21,6 +24,7 @@ void movement (int length, int &xH, int &yH, int &xT, int &yT)
 			
 		// ************** if none of the push buttons are high it will retain ************
 		// ************** the previous value of inputPin *********************************
+		*/
 		
 		switch (inputPin)  // left,right,up,down
 		{
@@ -29,25 +33,25 @@ void movement (int length, int &xH, int &yH, int &xT, int &yT)
 	    		case 1: if (!deadend_row(xH-1))
 	                		xH=xH-1;
 	             		else
-	             			gameOver();
+	             			gameOver=1;
 	             	
 	             	// RIGHT
 	             	case 2: if (!deadend_col(yH+1))
 	                		yH=yH+1;
 	             		else
-	             			gameOver();
+	             			gameOver=1;
 	             	
 	             	// DOWN
 	             	case 3: if (!deadend_row(xH+1))
 	                		xH=xH+1;
 	             		else
-	             			gameOver();
+	             			gameOver=1;
 	             			
 	             	// LEFT
 	             	case 4: if (!deadend_col(yH-1))
 	                		yH=yH-1;
 	             		else
-	             			gameOver();
+	             			gameOver=1;
 	        }
 	        
 		UpdateBit(coord,1,xH,yH);
