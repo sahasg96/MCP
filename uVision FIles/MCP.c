@@ -2,6 +2,7 @@
 #include<DisplayLibrary.h>
 #include<UpdateCoordinate.h>
 #include<InputLibrary.h>
+#include <Snake.h>
 
 unsigned int n = 0;
 unsigned char bytedata [10] = { 0x00,
@@ -30,7 +31,7 @@ void timer0() interrupt 1
 
 	}
 
-void ext1() interrupt 2
+void ext0() interrupt 0  //P3.2
 	{
 		UpdateInput();
 	}
@@ -38,23 +39,16 @@ void ext1() interrupt 2
 void main()
 	{
 	/***** Initial Config for timer *******/
-		IE = 0x86;
+		IE = 0x83;
 		TMOD = 0x02;
 		TH0 = 0x00;
 		TR0 = 1;
-		//////////////////////////////////////////////
+	//////////////////////////////////////////////
 		while(1)
 			{
 				c2b_all(coord,bytedata);
-
 				/*The game function is below*/
-				ClearData();
-				UpdateBit(4,2,1);
-				UpdateColoumn(1,1);
-				UpdateRow(3,1);
-				
-			//	ClearInputFlag();
 
-				
+
 			}
 		}
