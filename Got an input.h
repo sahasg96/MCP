@@ -54,8 +54,8 @@ void movement (int length, int &xH, int &yH, int &xT, int &yT)
 	             			gameOver=1;
 	        }
 	        
-		UpdateBit(coord,1,xH,yH);
-		UpdateBit(coord,0,xT,yT);
+		UpdateBit(xH,yH,1);
+		UpdateBit(xT,yT,0);
         }
 }
 
