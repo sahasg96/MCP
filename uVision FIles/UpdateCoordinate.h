@@ -24,7 +24,7 @@ void UpdateBit (int x, int y, bit value)
 			{
 					switch(x)
 						{
-						case 7: coord[y] = coord[y]|0x01;
+						case 7:coord[y] = coord[y]|0x01;
 							break;
 						case 6:coord[y] = coord[y]|0x02;
 							break;
