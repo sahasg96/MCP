@@ -2,12 +2,14 @@
 Micro-Controller Project Lab
 
 ##InputLibrary
-Inputs are taken as an interrupt. The pins are P3.7 to P3.4.
+Inputs are taken as an interrupt.
 
 ###UpdateInput()
 When an interrupt occurs, the bit data variables for UP,DOWN,RIGHT,LEFT are assigned to the value at the pins.
 The InputFlag is set to 1. The data variables will not be updated irrespective of the changes at the pins until the InputFlag is cleared.
 
+###ClearInputFlag()
+Clears the InputFlag.
 
 ##Display Library
 
