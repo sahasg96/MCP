@@ -35,6 +35,11 @@ LedOutput = P0
 
 External Input interrupt = P3.3
 
+UP   =P3.6
+DOWN =P3.5
+LEFT =P3.2
+RIGHT=P3.4
+
 ##UpdateCoordinate Library
 
 This Library contains functions to manipulate the bits of the x,y 2D array.
