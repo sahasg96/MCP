@@ -24,8 +24,8 @@ Project File Date:  10/05/2016
 <h2>Output:</h2>
 Build target 'Target 1'
 compiling MCP.c...
-MCP.c(4): warning C318: can't open file 'InputLibrary.h'
-MCP.c(35): warning C206: 'UpdateInput': missing function-prototype
+MCP.c(24): warning C290: missing return value
+MCP.c(29): warning C290: missing return value
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?RESETCOUNTER?MCP
@@ -33,16 +33,10 @@ linking...
     SEGMENT: ?PR?CLEARDISPLAY?MCP
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UPDATEBORDER?MCP
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  UPDATEINPUT
-    MODULE:  MCP.obj (MCP)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  UPDATEINPUT
-    MODULE:  MCP.obj (MCP)
-    ADDRESS: 0A77H
+Program Size: data=38.0 xdata=0 code=951
+creating hex file from "MCP"...
+"MCP" - 0 Error(s), 5 Warning(s).
+H
 Program Size: data=37.3 xdata=0 code=918
 creating hex file from "MCP"...
-"MCP" - 0 Error(s), 7 Warning(s).
-</pre>
-</body>
-</html>
+"MCP" - 0 Error(s), 5 Warning(s).

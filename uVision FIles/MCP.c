@@ -47,11 +47,12 @@ void main()
 			{
 				c2b_all(coord,bytedata);
 
-				/****The game function is below*/
+				/*The game function is below*/
 				ClearData();
 				UpdateBit(4,2,1);
 				UpdateColoumn(1,1);
 				UpdateRow(3,1);
+				ClearInputFlag();
 
 				
 			}
