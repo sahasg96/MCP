@@ -7,24 +7,31 @@ yH=3;
 yT=0;
 
 bit gameOver = 0;
+inputPin=2;
+
+int deadend_row (int n)
+{
+	if (n<0||n>9)
+		return 0;
+	else
+		return 1;
+}
+int deadend_col (int n)
+{
+	if (n<0||n>7)
+		return 0;
+	else
+		return 1;
+}
 
 void movement ()
 {
 	while (!gameOver)
 	{
-		/*
-		if ( UP == 1 )
-			inputPin = 1;
-		else if ( RIGHT == 1 )
-			inputPin = 2;
-		else if ( DOWN == 1 )
-			inputPin = 3;
-		else if ( LEFT == 1 )
-			inputPin = 4;
 
 		// ************** if none of the push buttons are high it will retain ************
 		// ************** the previous value of inputPin *********************************
-		*/
+
 
 		switch (inputPin)  // left,right,up,down
 		{
@@ -57,19 +64,4 @@ void movement ()
 		UpdateBit(xH,yH,1);
 		UpdateBit(xT,yT,0);
         }
-}
-
-int deadend_row (int n)
-{
-	if (n<0||n>9)
-		return 0;
-	else
-		return 1;
-}
-int deadend_col (int n)
-{
-	if (n<0||n>7)
-		return 0;
-	else
-		return 1;
 }

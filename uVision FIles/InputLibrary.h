@@ -11,7 +11,7 @@ bit InputFlag=0;
 
 UpdateInput()
 	{
-		if(InputFlag==0)
+	//	if(InputFlag==0)
 			{
 				delay(100);
 				UP=P_UP;
@@ -27,3 +27,19 @@ ClearInputFlag()
 	{
 		UP=DOWN=RIGHT=LEFT=InputFlag=0;
 	}
+
+/*
+int InputValue()
+	{
+		if ( UP == 1 )
+			return 1;
+		else if ( RIGHT == 1 )
+			return 2;
+		else if ( DOWN == 1 )
+			return 3;
+		else if ( LEFT == 1 )
+			return 4;
+		else
+			return 0;
+	}
+*/
