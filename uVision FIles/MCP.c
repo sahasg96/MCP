@@ -72,13 +72,12 @@ UpdateBit(3,0,1);
 					Over = movement(inputPin);
 				delay(1000);
 
-				if(Over)
+	/*			if(Over)
 					{
 						ClearData();
-						UpdateBorder();
+						UpdateBorder(1);
 						UpdateFrame(coord,bytedata);
-						break;
-					}
-
+						break;   
+					} */
 			}
 		}

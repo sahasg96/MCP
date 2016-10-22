@@ -81,9 +81,42 @@ void ClearData()
 	}
 
 void UpdateBorder(bit value)
-	{
+{
 	UpdateRow(0,value);
 	UpdateRow(9,value);
 	UpdateColoumn(0,value);
 	UpdateColoumn(7,value);
+}
+
+bit BitCheck(unsigned char x, unsigned char y)
+{
+	switch (x)
+	{
+		case 0: if(coord[y]&0x80 == 0x80)
+						return 1;
+						break;
+		case 1: if(coord[y]&0x40 == 0x40)
+						return 1;
+						break;
+		case 2: if(coord[y]&0x20 == 0x20)
+						return 1;
+						break;
+		case 3: if(coord[y]&0x10 == 0x10)
+						return 1;
+						break;
+		case 4: if(coord[y]&0x08 == 0x08)
+						return 1;
+						break;
+		case 5: if(coord[y]&0x04 == 0x04)
+						return 1;
+						break;
+		case 6: if(coord[y]&0x02 == 0x02)
+						return 1;
+						break;
+		case 7: if(coord[y]&0x01 == 0x01)
+						return 1;
+						break;
+
+	 default: return 0;
+	}
 }

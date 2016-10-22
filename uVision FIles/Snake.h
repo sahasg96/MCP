@@ -19,6 +19,7 @@ bit deadend_col (unsigned char n)
 		return 0;
 }
 
+
 bit movement (unsigned char inputPin)
 {
 		// ************** if none of the push buttons are high it will retain ************
@@ -50,7 +51,15 @@ bit movement (unsigned char inputPin)
 	             		else
 	             				gameOver=1;
 	  }
+		
 		UpdateBit(xH,yH,1);
 		UpdateBit(xT,yT,0);
+
+		if (BitCheck(xT+1,yT)==1) xT=xT+1;
+		else if (BitCheck(xT-1,yT)==1) xT=xT-1;
+
+		else if (BitCheck(xT,yT+1)==1) yT=yT+1;
+		else if (BitCheck(xT,yT-1)==1) yT=yT-1;
+
 		return gameOver;
 }
