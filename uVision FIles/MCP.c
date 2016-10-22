@@ -7,6 +7,7 @@
 unsigned char inputPin;
 unsigned int n = 0;
 bit Over = 0;
+
 unsigned char bytedata [10] = { 0x00,
 																0x00,
 																0x00,
@@ -18,7 +19,7 @@ unsigned char bytedata [10] = { 0x00,
 																0x00,
 																0x00};
 
-																
+
 void timer0() interrupt 1
 	{
 	P0 = bytedata[n];
@@ -35,8 +36,6 @@ void timer0() interrupt 1
 	}
 
 void ext0() interrupt 2  //P3.3
-	
-	
 	{
 		UpdateInput();
 		if ( UP == 1 )
@@ -48,7 +47,7 @@ void ext0() interrupt 2  //P3.3
 		else if ( LEFT == 1 )
 			inputPin = 4;
 	}
-	
+
 void main()
 	{
 	/***** Initial Config for timer *******/
@@ -65,28 +64,21 @@ UpdateBit(3,0,1);
 	/////////////////////////////////////////////
 		while(1)
 			{
-				
+
 				UpdateFrame(coord,bytedata);
 			/*The game function is below*/
+
 				if(!Over)
 					Over = movement(inputPin);
-				delay(1000); 
-			
-/*				if(UP==1)
-				{
-					ClearData();
-					UpdateRow(1,1);
-					UpdateRow(8,1);
-				}
-				
-				else
-				{
-					ClearData();
-					UpdateColoumn(1,1);
-					UpdateColoumn(7,1);
-				}
-				
-				toggle=~toggle;
-				delay(1000);    */
+				delay(1000);
+
+				if(Over)
+					{
+						ClearData();
+						UpdateBorder();
+						UpdateFrame(coord,bytedata);
+						break;
+					}
+
 			}
 		}

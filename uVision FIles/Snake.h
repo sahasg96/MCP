@@ -27,26 +27,26 @@ bit movement (unsigned char inputPin)
 		{
 
 	    		// UP
-	    		case 1: if (!deadend_row(xH-1))
-	                		xH=xH-1;
+	    		case 1: if (!deadend_row(yH-1))
+	                		yH=yH-1;
 	             		else
 	             				gameOver=1;
 
 	             	// RIGHT
-	        case 2: if (!deadend_col(yH+1))
-	                		yH=yH+1;
-	             		else
-	             				gameOver=1;
-
-	             	// DOWN
-	        case 3: if (!deadend_row(xH+1))
+	        case 2: if (!deadend_col(xH+1))
 	                		xH=xH+1;
 	             		else
 	             				gameOver=1;
 
+	             	// DOWN
+	        case 3: if (!deadend_row(yH+1))
+	                		yH=yH+1;
+	             		else
+	             				gameOver=1;
+
 	             	// LEFT
-	        case 4: if (!deadend_col(yH-1))
-	                		yH=yH-1;
+	        case 4: if (!deadend_col(xH-1))
+	                		xH=xH-1;
 	             		else
 	             				gameOver=1;
 	  }

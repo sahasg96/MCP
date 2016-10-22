@@ -151,27 +151,22 @@
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Over</ItemText>
+          <ItemText>DOWN</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DOWN</ItemText>
+          <ItemText>RIGHT</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>RIGHT</ItemText>
+          <ItemText>LEFT</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>LEFT</ItemText>
-        </Ww>
-        <Ww>
-          <count>7</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>n</ItemText>
+          <ItemText>Over</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
