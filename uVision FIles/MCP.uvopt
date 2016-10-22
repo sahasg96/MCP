@@ -128,7 +128,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDP51</Key>
-          <Name>(98=150,104,483,388,0)(82=1124,270,1322,375,1)(83=1053,298,1251,403,0)(84=1119,166,1317,271,1)(85=871,261,1069,366,1)(80=-1,-1,-1,-1,0)(91=501,116,701,381,0)(92=-1,-1,-1,-1,0)</Name>
+          <Name>(98=150,104,483,388,0)(82=1052,202,1250,307,1)(83=1053,298,1251,403,0)(84=1053,75,1251,180,1)(85=792,112,990,217,1)(80=-1,-1,-1,-1,0)(91=501,116,701,381,0)(92=-1,-1,-1,-1,0)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
       <Breakpoint/>
@@ -136,37 +136,42 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>bytedata</ItemText>
+          <ItemText>coord</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>coord</ItemText>
+          <ItemText>inputPin</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>inputPin</ItemText>
+          <ItemText>UP</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>UP</ItemText>
+          <ItemText>Over</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>xH</ItemText>
+          <ItemText>DOWN</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>xT</ItemText>
+          <ItemText>RIGHT</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>gameOver</ItemText>
+          <ItemText>LEFT</ItemText>
+        </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>n</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
@@ -174,6 +179,11 @@
           <count>0</count>
           <WinNumber>2</WinNumber>
           <ItemText>\\MCP\MCP\coord</ItemText>
+        </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>\\MCP\MCP\bytedata</ItemText>
         </Ww>
       </WatchWindow2>
       <Tracepoint>

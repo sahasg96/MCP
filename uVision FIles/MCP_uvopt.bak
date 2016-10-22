@@ -128,7 +128,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDP51</Key>
-          <Name>(98=150,104,483,388,0)(82=1137,114,1335,219,1)(83=1053,298,1251,403,0)(84=1142,267,1340,372,1)(85=887,270,1085,375,1)(80=-1,-1,-1,-1,0)(91=501,116,701,381,0)(92=-1,-1,-1,-1,0)</Name>
+          <Name>(98=150,104,483,388,0)(82=1124,270,1322,375,1)(83=1053,298,1251,403,0)(84=1119,166,1317,271,1)(85=792,112,990,217,1)(80=-1,-1,-1,-1,0)(91=501,116,701,381,0)(92=-1,-1,-1,-1,0)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
       <Breakpoint/>
@@ -136,54 +136,51 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>bytedata</ItemText>
+          <ItemText>coord</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>n</ItemText>
+          <ItemText>inputPin</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>\\MCP\MCP\n</ItemText>
+          <ItemText>UP</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>resetpin</ItemText>
+          <ItemText>gameOver</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>coord</ItemText>
+          <ItemText>DOWN</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>InputFlag</ItemText>
+          <ItemText>RIGHT</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>UP</ItemText>
-        </Ww>
-        <Ww>
-          <count>7</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>DOWN</ItemText>
-        </Ww>
-        <Ww>
-          <count>8</count>
-          <WinNumber>1</WinNumber>
           <ItemText>LEFT</ItemText>
         </Ww>
-        <Ww>
-          <count>9</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>RIGHT</ItemText>
-        </Ww>
       </WatchWindow1>
+      <WatchWindow2>
+        <Ww>
+          <count>0</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>\\MCP\MCP\coord</ItemText>
+        </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>\\MCP\MCP\bytedata</ItemText>
+        </Ww>
+      </WatchWindow2>
       <Tracepoint>
         <THDelay>0</THDelay>
       </Tracepoint>
