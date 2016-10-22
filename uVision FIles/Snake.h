@@ -1,5 +1,5 @@
 
-unsigned char xH=0, xT=0, yH=3, yT=0;
+unsigned char xH=3, xT=0, yH=0, yT=0;
 
 bit gameOver = 0;
 
@@ -51,7 +51,7 @@ bit movement (unsigned char inputPin)
 	             		else
 	             				gameOver=1;
 	  }
-		
+
 		UpdateBit(xH,yH,1);
 		UpdateBit(xT,yT,0);
 

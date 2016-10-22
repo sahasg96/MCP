@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   MCP                                                               10/22/2016 16:35:14 PAGE 1   
+C51 COMPILER V9.53.0.0   MCP                                                               10/22/2016 16:49:44 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MCP
@@ -62,7 +62,7 @@ line level    source
   53   1        /***** Initial Config for timer *******/
   54   1          IE = 0x86;    //Recheck register value
   55   1          TMOD = 0x02;
-C51 COMPILER V9.53.0.0   MCP                                                               10/22/2016 16:35:14 PAGE 2   
+C51 COMPILER V9.53.0.0   MCP                                                               10/22/2016 16:49:44 PAGE 2   
 
   56   1          TH0 = 0x00;
   57   1          TR0 = 1;
