@@ -58,5 +58,10 @@ Resets all frame data to 0.
 ###UpdateBorder(bit value)
 Creates a border, value switches it on or off.
 
-###CheckValue(unsigned char x, unsigned char y)
+###BitCheck(unsigned char x, unsigned char y)
 Returns 1 if bit high, 0 if bit low.
+
+##Snake Library
+Initiliazes head and tail coordinates. Depending on inputPin value, updates head coordinates. 
+clears the tail cell from coord.
+updates new tail coordinates using BitCheck function.
