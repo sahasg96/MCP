@@ -4,7 +4,7 @@
 #include<InputLibrary.h>
 #include<Snake.h>
 
-unsigned char inputPin;
+unsigned char inputPin = 2;
 unsigned int n = 0;
 bit Over = 0;
 
@@ -70,14 +70,11 @@ UpdateBit(3,0,1);
 
 				if(!Over)
 					Over = movement(inputPin);
-				delay(1000);
+				delay(5000);  
+				
+			/*	UpdateRow(1,1);
+				Over = BitCheck(1,5);*/
 
-	/*			if(Over)
-					{
-						ClearData();
-						UpdateBorder(1);
-						UpdateFrame(coord,bytedata);
-						break;   
-					} */
+	
 			}
 		}

@@ -10,7 +10,7 @@ unsigned char coord [10] = {
 				0x00,
 				0x00};
 
-void UpdateRow (int y, bit value)
+void UpdateRow (unsigned char y, bit value)
 	{
 		if(value==1)
 			coord[y] = 0xFF;
@@ -18,7 +18,7 @@ void UpdateRow (int y, bit value)
 			coord[y] = 0x00;
 	}
 
-void UpdateBit (int x, int y, bit value)
+void UpdateBit (unsigned char x, unsigned char y, bit value)
 	{
 		if (value==1)
 			{
@@ -46,27 +46,27 @@ void UpdateBit (int x, int y, bit value)
 					{
 							switch(x)
 								{
-								case 7: coord[y] = coord[y]|0xFE;
+								case 7: coord[y] = coord[y]&0xFE;
 									break;
-								case 6:coord[y] = coord[y]|0xFD;
+								case 6:coord[y] = coord[y]&0xFD;
 									break;
-								case 5:coord[y] = coord[y]|0xFB;
+								case 5:coord[y] = coord[y]&0xFB;
 									break;
-								case 4:coord[y] = coord[y]|0xF7;
+								case 4:coord[y] = coord[y]&0xF7;
 									break;
-								case 3:coord[y] = coord[y]|0xEF;
+								case 3:coord[y] = coord[y]&0xEF;
 									break;
-								case 2:coord[y] = coord[y]|0xDF;
+								case 2:coord[y] = coord[y]&0xDF;
 									break;
-								case 1:coord[y] = coord[y]|0xBF;
+								case 1:coord[y] = coord[y]&0xBF;
 									break;
-								case 0:coord[y] = coord[y]|0x7F;
+								case 0:coord[y] = coord[y]&0x7F;
 									break;
 							}
 						}
 	}
 
-void UpdateColoumn ( int x, bit value)
+void UpdateColumn ( unsigned char x, bit value)
 	{
 		int i;
 		for(i=0;i<10;i++)
@@ -84,39 +84,40 @@ void UpdateBorder(bit value)
 {
 	UpdateRow(0,value);
 	UpdateRow(9,value);
-	UpdateColoumn(0,value);
-	UpdateColoumn(7,value);
+	UpdateColumn(0,value);
+	UpdateColumn(7,value);
 }
 
 bit BitCheck(unsigned char x, unsigned char y)
 {
 	switch (x)
 	{
-		case 0: if(coord[y]&0x80 == 0x80)
+		case 0: if(coord[y] & 0x80 == 0x80)
 						return 1;
 						break;
-		case 1: if(coord[y]&0x40 == 0x40)
+		case 1: if(coord[y] & 0x40 == 0x40)
 						return 1;
 						break;
-		case 2: if(coord[y]&0x20 == 0x20)
+		case 2: if(coord[y] & 0x20 == 0x20)
 						return 1;
 						break;
-		case 3: if(coord[y]&0x10 == 0x10)
+		case 3: if(coord[y] & 0x10 == 0x10)
 						return 1;
 						break;
-		case 4: if(coord[y]&0x08 == 0x08)
+		case 4: if(coord[y] & 0x08 == 0x08)
 						return 1;
 						break;
-		case 5: if(coord[y]&0x04 == 0x04)
+		case 5: if(coord[y] & 0x04 == 0x04)
 						return 1;
 						break;
-		case 6: if(coord[y]&0x02 == 0x02)
+		case 6: if(coord[y] & 0x02 == 0x02)
 						return 1;
 						break;
-		case 7: if(coord[y]&0x01 == 0x01)
+		case 7: if(coord[y] & 0x01 == 0x01)
 						return 1;
 						break;
 
 	 default: return 0;
 	}
+	return 0;
 }

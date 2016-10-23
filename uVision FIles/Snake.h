@@ -32,24 +32,28 @@ bit movement (unsigned char inputPin)
 	                		yH=yH-1;
 	             		else
 	             				gameOver=1;
+									break;
 
 	             	// RIGHT
 	        case 2: if (!deadend_col(xH+1))
 	                		xH=xH+1;
 	             		else
 	             				gameOver=1;
+									break;
 
 	             	// DOWN
 	        case 3: if (!deadend_row(yH+1))
 	                		yH=yH+1;
 	             		else
 	             				gameOver=1;
+									break;
 
 	             	// LEFT
 	        case 4: if (!deadend_col(xH-1))
 	                		xH=xH-1;
 	             		else
 	             				gameOver=1;
+									break;
 	  }
 
 		UpdateBit(xH,yH,1);

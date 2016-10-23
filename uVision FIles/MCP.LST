@@ -1,9 +1,9 @@
-C51 COMPILER V9.53.0.0   MCP                                                               10/22/2016 16:49:44 PAGE 1   
+C51 COMPILER V9.53.0.0   MCP                                                               10/23/2016 19:26:07 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MCP
 OBJECT MODULE PLACED IN MCP.OBJ
-COMPILER INVOKED BY: D:\Software\KeiluV5\C51\BIN\C51.EXE MCP.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+COMPILER INVOKED BY: D:\C51\BIN\C51.EXE MCP.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
 
 line level    source
 
@@ -13,7 +13,7 @@ line level    source
    4          #include<InputLibrary.h>
    5          #include<Snake.h>
    6          
-   7          unsigned char inputPin;
+   7          unsigned char inputPin = 2;
    8          unsigned int n = 0;
    9          bit Over = 0;
   10          
@@ -62,7 +62,7 @@ line level    source
   53   1        /***** Initial Config for timer *******/
   54   1          IE = 0x86;    //Recheck register value
   55   1          TMOD = 0x02;
-C51 COMPILER V9.53.0.0   MCP                                                               10/22/2016 16:49:44 PAGE 2   
+C51 COMPILER V9.53.0.0   MCP                                                               10/23/2016 19:26:07 PAGE 2   
 
   56   1          TH0 = 0x00;
   57   1          TR0 = 1;
@@ -81,30 +81,26 @@ line level    source
   70   2      
   71   2              if(!Over)
   72   2                Over = movement(inputPin);
-  73   2              delay(1000);
-  74   2      
-  75   2        /*      if(Over)
-  76   2                {
-  77   2                  ClearData();
-  78   2                  UpdateBorder(1);
-  79   2                  UpdateFrame(coord,bytedata);
-  80   2                  break;   
-  81   2                } */
-  82   2            }
-  83   1          }
-*** WARNING C291 IN LINE 122 OF MCP.c: not every exit path returns a value
+  73   2              delay(5000);  
+  74   2              
+  75   2            /*  UpdateRow(1,1);
+  76   2              Over = BitCheck(1,5);*/
+  77   2      
+  78   2        
+  79   2            }
+  80   1          }
 *** WARNING C290 IN LINE 25 OF MCP.c: missing return value
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1016    ----
+   CODE SIZE        =    992    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     27      10
+   DATA SIZE        =     27       6
    IDATA SIZE       =   ----    ----
    BIT SIZE         =      6       4
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
