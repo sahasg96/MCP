@@ -6,10 +6,6 @@ Inputs are taken as an interrupt.
 
 ###UpdateInput()
 When an interrupt occurs, the bit data variables for UP,DOWN,RIGHT,LEFT are assigned to the value at the pins.
-The InputFlag is set to 1. The data variables will not be updated irrespective of the changes at the pins until the InputFlag is cleared.
-
-###ClearInputFlag()
-Clears the InputFlag.
 
 ##Display Library
 
@@ -24,7 +20,7 @@ Resets the IC4017 decade counter.
 ###ClearDisplay()
 Cleares the display, makes it blank.
 
-###c2b_all(byte coord[], byte databyte[])
+###UpdateFrame(byte coord[], byte databyte[])
 Converts all the rows and modifies the value of the byte data array.
 
 ##Ports
@@ -37,9 +33,9 @@ LedOutput = P0
 
 External Input interrupt = P3.3
 
-UP   =P3.6
-DOWN =P3.5
-LEFT =P3.2
+UP   =P3.7
+DOWN =P3.6
+LEFT =P3.5
 RIGHT=P3.4
 
 ##UpdateCoordinate Library
@@ -53,7 +49,7 @@ Can update a single bit, its location defined by the x, y input.
 ###UpdateRow(int y, bit value)
 Can update a single row, its location defined by the y input.
 
-###UpdateColoumn(int x, bit value)
+###UpdateColumn(int x, bit value)
 Can update a single Coloumn, its location defined by the x input.
 
 ###ClearData()
@@ -61,3 +57,6 @@ Resets all frame data to 0.
 
 ###UpdateBorder(bit value)
 Creates a border, value switches it on or off.
+
+###CheckValue(unsigned char x, unsigned char y)
+Returns 1 if bit high, 0 if bit low.
