@@ -5,7 +5,7 @@ bit gameOver = 0;
 
 bit deadend_row (unsigned char n)
 {
-	if (n<0||n>7)
+	if (n<0||n>9)
 		return 1;
 	else
 		return 0;
@@ -13,7 +13,7 @@ bit deadend_row (unsigned char n)
 
 bit deadend_col (unsigned char n)
 {
-	if (n<0||n>9)
+	if (n<0||n>7)
 		return 1;
 	else
 		return 0;
