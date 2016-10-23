@@ -1,7 +1,27 @@
 
-unsigned char xH=3, xT=0, yH=0, yT=0;
+unsigned char xH=3;
+unsigned char xT=0;
+unsigned char yH=0;
+unsigned char yT=0;
+
 
 bit gameOver = 0;
+
+void UpdateTail()
+{	
+	if (BitCheck(xT+1,yT)==1) 
+	{xT++;}
+	
+	else if (BitCheck(xT-1,yT)==1) 
+	{xT--;}
+	
+	if (BitCheck(xT,yT+1)==1)
+	{yT++;}
+	
+	else if (BitCheck(xT,yT-1)==1)
+	{yT--;}
+	
+}
 
 bit deadend_row (unsigned char n)
 {
@@ -32,6 +52,7 @@ bit movement (unsigned char inputPin)
 	                		yH=yH-1;
 	             		else
 	             				gameOver=1;
+									UpdateTail();
 									break;
 
 	             	// RIGHT
@@ -39,6 +60,7 @@ bit movement (unsigned char inputPin)
 	                		xH=xH+1;
 	             		else
 	             				gameOver=1;
+									UpdateTail();
 									break;
 
 	             	// DOWN
@@ -46,6 +68,7 @@ bit movement (unsigned char inputPin)
 	                		yH=yH+1;
 	             		else
 	             				gameOver=1;
+									UpdateTail();
 									break;
 
 	             	// LEFT
@@ -53,17 +76,12 @@ bit movement (unsigned char inputPin)
 	                		xH=xH-1;
 	             		else
 	             				gameOver=1;
+									UpdateTail();
 									break;
 	  }
-
+		
 		UpdateBit(xH,yH,1);
 		UpdateBit(xT,yT,0);
-
-		if (BitCheck(xT+1,yT)==1) xT=xT+1;
-		else if (BitCheck(xT-1,yT)==1) xT=xT-1;
-
-		else if (BitCheck(xT,yT+1)==1) yT=yT+1;
-		else if (BitCheck(xT,yT-1)==1) yT=yT-1;
-
 		return gameOver;
 }
+

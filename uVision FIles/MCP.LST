@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   MCP                                                               10/23/2016 19:26:07 PAGE 1   
+C51 COMPILER V9.53.0.0   MCP                                                               10/23/2016 20:54:05 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MCP
@@ -15,10 +15,10 @@ line level    source
    6          
    7          unsigned char inputPin = 2;
    8          unsigned int n = 0;
-   9          bit Over = 0;
-  10          
-  11          unsigned char bytedata [10] = { 0x00,
-  12                                          0x00,
+   9          bit Over ;
+  10          bit test ;
+  11          
+  12          unsigned char bytedata [10] = { 0x00,
   13                                          0x00,
   14                                          0x00,
   15                                          0x00,
@@ -26,81 +26,83 @@ line level    source
   17                                          0x00,
   18                                          0x00,
   19                                          0x00,
-  20                                          0x00};
-  21          
+  20                                          0x00,
+  21                                          0x00};
   22          
-  23          void timer0() interrupt 1
-  24            {
-  25   1        P0 = bytedata[n];
-  26   1        clkpin = ~clkpin;
-  27   1        n=n+1;
-  28   1          if(n==10)
-  29   1          {
-  30   2                n=0;
-  31   2                resetpin=1;
-  32   2                delay(5);
-  33   2                resetpin=0;
-  34   2          }
-  35   1      
-  36   1        }
-  37          
-  38          void ext0() interrupt 2  //P3.3
-  39            {
-  40   1          UpdateInput();
-  41   1          if ( UP == 1 )
-  42   1            inputPin = 1;
-  43   1          else if ( RIGHT == 1 )
-  44   1            inputPin = 2;
-  45   1          else if ( DOWN == 1 )
-  46   1            inputPin = 3;
-  47   1          else if ( LEFT == 1 )
-  48   1            inputPin = 4;
-  49   1        }
-  50          
-  51          void main()
-  52            {
-  53   1        /***** Initial Config for timer *******/
-  54   1          IE = 0x86;    //Recheck register value
-  55   1          TMOD = 0x02;
-C51 COMPILER V9.53.0.0   MCP                                                               10/23/2016 19:26:07 PAGE 2   
+  23          
+  24          void timer0() interrupt 1
+  25            {
+  26   1        P0 = bytedata[n];
+  27   1        clkpin = ~clkpin;
+  28   1        n=n+1;
+  29   1          if(n==10)
+  30   1          {
+  31   2                n=0;
+  32   2                resetpin=1;
+  33   2                delay(5);
+  34   2                resetpin=0;
+  35   2          }
+  36   1      
+  37   1        }
+  38          
+  39          void ext0() interrupt 2  //P3.3
+  40            {
+  41   1          UpdateInput();
+  42   1          if ( UP == 1 )
+  43   1            inputPin = 1;
+  44   1          else if ( RIGHT == 1 )
+  45   1            inputPin = 2;
+  46   1          else if ( DOWN == 1 )
+  47   1            inputPin = 3;
+  48   1          else if ( LEFT == 1 )
+  49   1            inputPin = 4;
+  50   1        }
+  51          
+  52          void main()
+  53            {
+  54   1        /***** Initial Config for timer *******/
+  55   1          IE = 0x86;    //Recheck register value
+C51 COMPILER V9.53.0.0   MCP                                                               10/23/2016 20:54:05 PAGE 2   
 
-  56   1          TH0 = 0x00;
-  57   1          TR0 = 1;
-  58   1          P3 = 0x0F;
-  59   1        /* Game Initialisation */
-  60   1      UpdateBit(0,0,1);
-  61   1      UpdateBit(1,0,1);
-  62   1      UpdateBit(2,0,1);
-  63   1      UpdateBit(3,0,1);
-  64   1        /////////////////////////////////////////////
-  65   1          while(1)
-  66   1            {
-  67   2      
-  68   2              UpdateFrame(coord,bytedata);
-  69   2            /*The game function is below*/
-  70   2      
-  71   2              if(!Over)
-  72   2                Over = movement(inputPin);
-  73   2              delay(5000);  
-  74   2              
-  75   2            /*  UpdateRow(1,1);
-  76   2              Over = BitCheck(1,5);*/
-  77   2      
-  78   2        
-  79   2            }
-  80   1          }
+  56   1          TMOD = 0x02;
+  57   1          TH0 = 0x00;
+  58   1          TR0 = 1;
+  59   1          P3 = 0x0F;
+  60   1        /* Game Initialisation */
+  61   1      UpdateBit(0,0,1);
+  62   1      UpdateBit(1,0,1);
+  63   1      UpdateBit(2,0,1);
+  64   1      UpdateBit(3,0,1);
+  65   1        /////////////////////////////////////////////
+  66   1          while(1)
+  67   1            {
+  68   2      
+  69   2              UpdateFrame(coord,bytedata);
+  70   2              
+  71   2              /*The game function is below*/
+  72   2      
+  73   2              if(!Over)
+  74   2              {
+  75   3                Over = movement(inputPin);
+  76   3                delay(10000);  
+  77   3              }   
+  78   2      
+  79   2        
+  80   2            }
+  81   1          }
+*** WARNING C291 IN LINE 136 OF MCP.c: not every exit path returns a value
 *** WARNING C290 IN LINE 25 OF MCP.c: missing return value
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    992    ----
+   CODE SIZE        =    971    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =     27       6
    IDATA SIZE       =   ----    ----
-   BIT SIZE         =      6       4
+   BIT SIZE         =      7       4
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)

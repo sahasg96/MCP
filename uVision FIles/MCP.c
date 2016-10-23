@@ -6,7 +6,8 @@
 
 unsigned char inputPin = 2;
 unsigned int n = 0;
-bit Over = 0;
+bit Over ;
+bit test ;
 
 unsigned char bytedata [10] = { 0x00,
 																0x00,
@@ -66,14 +67,14 @@ UpdateBit(3,0,1);
 			{
 
 				UpdateFrame(coord,bytedata);
-			/*The game function is below*/
+			  
+				/*The game function is below*/
 
 				if(!Over)
+				{
 					Over = movement(inputPin);
-				delay(5000);  
-				
-			/*	UpdateRow(1,1);
-				Over = BitCheck(1,5);*/
+					delay(10000);  
+				}   
 
 	
 			}
