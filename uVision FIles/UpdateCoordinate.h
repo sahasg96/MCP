@@ -88,7 +88,7 @@ void UpdateBorder(bit value)
 	UpdateColumn(7,value);
 }
 
-bit BitCheck(unsigned char x, unsigned char y)
+bit BitCheck(unsigned int x, unsigned int y)
 { 
 	unsigned char c = coord[y];
 	switch (x)

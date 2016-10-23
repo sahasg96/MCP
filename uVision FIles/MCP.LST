@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   MCP                                                               10/23/2016 20:54:05 PAGE 1   
+C51 COMPILER V9.53.0.0   MCP                                                               10/23/2016 21:21:37 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MCP
@@ -13,7 +13,7 @@ line level    source
    4          #include<InputLibrary.h>
    5          #include<Snake.h>
    6          
-   7          unsigned char inputPin = 2;
+   7          unsigned char inputPin = 3;
    8          unsigned int n = 0;
    9          bit Over ;
   10          bit test ;
@@ -62,7 +62,7 @@ line level    source
   53            {
   54   1        /***** Initial Config for timer *******/
   55   1          IE = 0x86;    //Recheck register value
-C51 COMPILER V9.53.0.0   MCP                                                               10/23/2016 20:54:05 PAGE 2   
+C51 COMPILER V9.53.0.0   MCP                                                               10/23/2016 21:21:37 PAGE 2   
 
   56   1          TMOD = 0x02;
   57   1          TH0 = 0x00;
@@ -95,11 +95,11 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    971    ----
+   CODE SIZE        =   1072    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     27       6
+   DATA SIZE        =     31       6
    IDATA SIZE       =   ----    ----
    BIT SIZE         =      7       4
 END OF MODULE INFORMATION.

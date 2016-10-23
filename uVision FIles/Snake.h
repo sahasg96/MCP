@@ -1,8 +1,8 @@
 
-unsigned char xH=3;
-unsigned char xT=0;
-unsigned char yH=0;
-unsigned char yT=0;
+unsigned int xH=3;
+unsigned int xT=0;
+unsigned int yH=0;
+unsigned int yT=0;
 
 
 bit gameOver = 0;
@@ -10,16 +10,15 @@ bit gameOver = 0;
 void UpdateTail()
 {	
 	if (BitCheck(xT+1,yT)==1) 
-	{xT++;}
-	
-	else if (BitCheck(xT-1,yT)==1) 
-	{xT--;}
-	
+		xT++;
+	else if (BitCheck(xT-1,yT)==1 && xT>0) 
+		xT--;
+
 	if (BitCheck(xT,yT+1)==1)
-	{yT++;}
+		yT++;
+	else if (BitCheck(xT,yT-1)==1 && yT>0)
+		yT--;
 	
-	else if (BitCheck(xT,yT-1)==1)
-	{yT--;}
 	
 }
 
