@@ -51,7 +51,6 @@ bit movement (unsigned char inputPin)
 	                		yH=yH-1;
 	             		else
 	             				gameOver=1;
-									UpdateTail();
 									break;
 
 	             	// RIGHT
@@ -59,7 +58,6 @@ bit movement (unsigned char inputPin)
 	                		xH=xH+1;
 	             		else
 	             				gameOver=1;
-									UpdateTail();
 									break;
 
 	             	// DOWN
@@ -67,7 +65,6 @@ bit movement (unsigned char inputPin)
 	                		yH=yH+1;
 	             		else
 	             				gameOver=1;
-									UpdateTail();
 									break;
 
 	             	// LEFT
@@ -75,12 +72,13 @@ bit movement (unsigned char inputPin)
 	                		xH=xH-1;
 	             		else
 	             				gameOver=1;
-									UpdateTail();
 									break;
 	  }
 		
 		UpdateBit(xH,yH,1);
 		UpdateBit(xT,yT,0);
+		UpdateTail();
+		
 		return gameOver;
 }
 

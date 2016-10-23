@@ -73,7 +73,7 @@ UpdateBit(3,0,1);
 				if(!Over)
 				{
 					Over = movement(inputPin);
-					delay(10000);  
+					delay(5000);  
 				}   
 
 	
