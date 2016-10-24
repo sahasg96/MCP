@@ -1,9 +1,9 @@
-C51 COMPILER V9.53.0.0   MCP                                                               10/24/2016 01:30:28 PAGE 1   
+C51 COMPILER V9.53.0.0   MCP                                                               10/24/2016 11:27:54 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MCP
 OBJECT MODULE PLACED IN MCP.OBJ
-COMPILER INVOKED BY: D:\Software\KeiluV5\C51\BIN\C51.EXE MCP.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+COMPILER INVOKED BY: D:\C51\BIN\C51.EXE MCP.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   53            {
   54   1        /***** Initial Config for timer *******/
   55   1          IE = 0x86;    //Recheck register value
-C51 COMPILER V9.53.0.0   MCP                                                               10/24/2016 01:30:28 PAGE 2   
+C51 COMPILER V9.53.0.0   MCP                                                               10/24/2016 11:27:54 PAGE 2   
 
   56   1          TMOD = 0x02;
   57   1          TH0 = 0x00;
@@ -90,12 +90,12 @@ line level    source
   79   2        
   80   2            }
   81   1          }
-*** WARNING C291 IN LINE 136 OF MCP.c: not every exit path returns a value
+*** WARNING C291 IN LINE 135 OF MCP.c: not every exit path returns a value
 *** WARNING C290 IN LINE 25 OF MCP.c: missing return value
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1080    ----
+   CODE SIZE        =   1112    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

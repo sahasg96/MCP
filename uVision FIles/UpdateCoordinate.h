@@ -90,45 +90,44 @@ void UpdateBorder(bit value)
 
 bit BitCheck(unsigned int x, unsigned int y)
 { 
-	unsigned char c = coord[y];
 	switch (x)
 	{
-		case 0: if((c & 0x80) == 0x80)
+		case 0: if((coord[y] & 0x80) == 0x80)
 							return 1;
 						else
 							return 0;
 						
-		case 1: if((c & 0x40) == 0x40)
+		case 1: if((coord[y] & 0x40) == 0x40)
 							return 1;
 						else
 							return 0;
 						
-		case 2: if((c & 0x20) == 0x20)
+		case 2: if((coord[y] & 0x20) == 0x20)
 							return 1;
 						else
 							return 0;
 						
-		case 3: if((c & 0x10) == 0x10)
+		case 3: if((coord[y] & 0x10) == 0x10)
 							return 1;
 						else
 							return 0;
 						
-		case 4: if((c & 0x08) == 0x08)
+		case 4: if((coord[y] & 0x08) == 0x08)
 							return 1;
 						else
 							return 0;
 						
-		case 5: if((c & 0x04) == 0x04)
+		case 5: if((coord[y] & 0x04) == 0x04)
 							return 1;
 						else
 							return 0;
 						
-		case 6: if((c & 0x02) == 0x02)
+		case 6: if((coord[y] & 0x02) == 0x02)
 							return 1;
 						else
 							return 0;
 						
-		case 7: if((c & 0x01) == 0x01)
+		case 7: if((coord[y] & 0x01) == 0x01)
 							return 1;
 						else
 							return 0;
