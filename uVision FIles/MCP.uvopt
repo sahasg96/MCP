@@ -128,7 +128,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDP51</Key>
-          <Name>(98=150,104,483,388,0)(82=1052,202,1250,307,1)(83=1053,298,1251,403,0)(84=1053,75,1251,180,1)(85=0,111,198,216,1)(80=-1,-1,-1,-1,0)(91=501,116,701,381,0)(92=-1,-1,-1,-1,0)</Name>
+          <Name>(98=150,104,483,388,0)(82=1052,202,1250,307,1)(83=1053,298,1251,403,0)(84=1053,75,1251,180,1)(85=635,253,833,358,1)(80=-1,-1,-1,-1,0)(91=501,116,701,381,0)(92=-1,-1,-1,-1,0)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
       <Breakpoint/>
@@ -172,6 +172,16 @@
           <count>7</count>
           <WinNumber>1</WinNumber>
           <ItemText>bytedata</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>value</ItemText>
+        </Ww>
+        <Ww>
+          <count>9</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>f3</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>

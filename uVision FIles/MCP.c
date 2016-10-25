@@ -20,7 +20,6 @@ unsigned char bytedata [10] = { 0x00,
 																0x00,
 																0x00};
 
-
 void timer0() interrupt 1
 	{
 	P0 = bytedata[n];
@@ -58,29 +57,30 @@ void main()
 		TR0 = 1;
 		P3 = 0x0F;
 	/* Game Initialisation */
-UpdateBit(0,0,1);
-UpdateBit(1,0,1);
-UpdateBit(2,0,1);
-UpdateBit(3,0,1);
-UpdateBlock(0,1,1);
-UpdateBlock(3,4,1);
-UpdateBlock(6,7,1);
+		UpdateBit(0,0,1);
+		UpdateBit(1,0,1);
+		UpdateBit(2,0,1);
+		UpdateBit(3,0,1);
+		UpdateBlock(0,1,1);
+		UpdateBlock(3,4,1);
+		UpdateBlock(6,7,1);
 	/////////////////////////////////////////////
 		while(1)
 			{
 
 				UpdateFrame(coord,bytedata);
-			  
+
 				/*The game function is below*/
 
 				if(!Over)
-				{
+					{
+					fruit_disp();
 					Over = movement(inputPin);
-					delay(2500);  
-				}
+					delay(1500);
+					}
 				if(Over)
 					GameOver_Display();
 
-	
+
 			}
 		}
