@@ -4,7 +4,7 @@
 #include<InputLibrary.h>
 #include<Snake.h>
 
-unsigned char inputPin = 3;
+unsigned char inputPin = 2;
 unsigned int n = 0;
 bit Over ;
 bit test ;

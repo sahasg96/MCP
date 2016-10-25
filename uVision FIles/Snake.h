@@ -9,14 +9,15 @@ bit gameOver = 0;
 
 void UpdateTail()
 {	
+	unsigned int xT_temp = xT;
 	if (BitCheck(xT+1,yT)==1) 
 		xT++;
 	else if (BitCheck(xT-1,yT)==1 && xT>0) 
 		xT--;
 
-	if (BitCheck(xT,yT+1)==1)
+	if (BitCheck(xT_temp,yT+1)==1)
 		yT++;
-	else if (BitCheck(xT,yT-1)==1 && yT>0)
+	else if (BitCheck(xT_temp,yT-1)==1 && yT>0)
 		yT--;
 	
 	
