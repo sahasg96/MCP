@@ -10,6 +10,7 @@ bit gameOver = 0;
 void UpdateTail()
 {	
 	unsigned int xT_temp = xT;
+	
 	if (BitCheck(xT+1,yT)==1) 
 		xT++;
 	else if (BitCheck(xT-1,yT)==1 && xT>0) 
@@ -19,9 +20,15 @@ void UpdateTail()
 		yT++;
 	else if (BitCheck(xT_temp,yT-1)==1 && yT>0)
 		yT--;
-	
-	
 }
+
+bit Obstacle(unsigned int x, unsigned int y)
+	{
+		if((xH==x||xH==x+1)&&(yH==y||yH==y+1))
+			return 1;
+		else
+			return 0;
+	}
 
 bit deadend_row (unsigned char n)
 {
@@ -79,6 +86,9 @@ bit movement (unsigned char inputPin)
 		UpdateBit(xH,yH,1);
 		UpdateBit(xT,yT,0);
 		UpdateTail();
+		
+		if(Obstacle(0,1)==1||Obstacle(3,4)==1||Obstacle(6,7)==1)
+				gameOver=1;
 		
 		return gameOver;
 }

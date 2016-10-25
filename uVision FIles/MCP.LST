@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   MCP                                                               10/25/2016 19:23:04 PAGE 1   
+C51 COMPILER V9.53.0.0   MCP                                                               10/25/2016 23:11:37 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MCP
@@ -62,7 +62,7 @@ line level    source
   53            {
   54   1        /***** Initial Config for timer *******/
   55   1          IE = 0x86;    //Recheck register value
-C51 COMPILER V9.53.0.0   MCP                                                               10/25/2016 19:23:04 PAGE 2   
+C51 COMPILER V9.53.0.0   MCP                                                               10/25/2016 23:11:37 PAGE 2   
 
   56   1          TMOD = 0x02;
   57   1          TH0 = 0x00;
@@ -73,35 +73,40 @@ line level    source
   62   1      UpdateBit(1,0,1);
   63   1      UpdateBit(2,0,1);
   64   1      UpdateBit(3,0,1);
-  65   1        /////////////////////////////////////////////
-  66   1          while(1)
-  67   1            {
-  68   2      
-  69   2              UpdateFrame(coord,bytedata);
-  70   2              
-  71   2              /*The game function is below*/
-  72   2      
-  73   2              if(!Over)
-  74   2              {
-  75   3                Over = movement(inputPin);
-  76   3                delay(5000);  
-  77   3              }   
-  78   2      
-  79   2        
-  80   2            }
-  81   1          }
+  65   1      UpdateBlock(0,1,1);
+  66   1      UpdateBlock(3,4,1);
+  67   1      UpdateBlock(6,7,1);
+  68   1        /////////////////////////////////////////////
+  69   1          while(1)
+  70   1            {
+  71   2      
+  72   2              UpdateFrame(coord,bytedata);
+  73   2              
+  74   2              /*The game function is below*/
+  75   2      
+  76   2              if(!Over)
+  77   2              {
+  78   3                Over = movement(inputPin);
+  79   3                delay(2500);  
+  80   3              }
+  81   2              if(Over)
+  82   2                GameOver_Display();
+  83   2      
+  84   2        
+  85   2            }
+  86   1          }
 *** WARNING C291 IN LINE 135 OF MCP.c: not every exit path returns a value
 *** WARNING C290 IN LINE 25 OF MCP.c: missing return value
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1116    ----
+   CODE SIZE        =   1333    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =     31       6
    IDATA SIZE       =   ----    ----
-   BIT SIZE         =      7       4
+   BIT SIZE         =      7       5
 END OF MODULE INFORMATION.
 
 

@@ -62,6 +62,9 @@ UpdateBit(0,0,1);
 UpdateBit(1,0,1);
 UpdateBit(2,0,1);
 UpdateBit(3,0,1);
+UpdateBlock(0,1,1);
+UpdateBlock(3,4,1);
+UpdateBlock(6,7,1);
 	/////////////////////////////////////////////
 		while(1)
 			{
@@ -73,8 +76,10 @@ UpdateBit(3,0,1);
 				if(!Over)
 				{
 					Over = movement(inputPin);
-					delay(5000);  
-				}   
+					delay(2500);  
+				}
+				if(Over)
+					GameOver_Display();
 
 	
 			}

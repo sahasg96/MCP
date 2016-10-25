@@ -133,3 +133,24 @@ bit BitCheck(unsigned int x, unsigned int y)
 							return 0;
 	}
 }
+
+void UpdateBlock(unsigned char x, unsigned char y, bit value)
+{
+	UpdateBit(x,y,value);
+	UpdateBit(x+1,y,value);
+	UpdateBit(x,y+1,value);
+	UpdateBit(x+1,y+1,value);
+}
+
+void GameOver_Display()
+{
+	delay(500);
+	ClearData();
+	UpdateBorder(1);
+	UpdateBlock(3,4,1);
+	UpdateBlock(5,2,1);
+	UpdateBlock(1,2,1);
+	UpdateBlock(5,6,1);
+	UpdateBlock(1,6,1);
+}
+	
