@@ -168,6 +168,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>yH</ItemText>
         </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>bytedata</ItemText>
+        </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>

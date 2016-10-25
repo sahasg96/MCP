@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   MCP                                                               10/25/2016 23:11:37 PAGE 1   
+C51 COMPILER V9.53.0.0   MCP                                                               10/25/2016 23:30:21 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MCP
@@ -62,7 +62,7 @@ line level    source
   53            {
   54   1        /***** Initial Config for timer *******/
   55   1          IE = 0x86;    //Recheck register value
-C51 COMPILER V9.53.0.0   MCP                                                               10/25/2016 23:11:37 PAGE 2   
+C51 COMPILER V9.53.0.0   MCP                                                               10/25/2016 23:30:21 PAGE 2   
 
   56   1          TMOD = 0x02;
   57   1          TH0 = 0x00;
@@ -100,7 +100,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1333    ----
+   CODE SIZE        =   1334    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

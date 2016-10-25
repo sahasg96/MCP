@@ -32,5 +32,5 @@ void UpdateFrame(unsigned char coord[10], unsigned char bytedata[10])
 	{
 		int i;
 		for(i=0;i<10;i++)
-			bytedata[i] = coord[i];
+			bytedata[i] = ~coord[i];
 	}
