@@ -8,6 +8,7 @@ unsigned char inputPin = 2;
 unsigned int n = 0;
 bit Over ;
 bit test ;
+unsigned int i;
 
 unsigned char bytedata [10] = { 0x00,
 																0x00,
@@ -22,6 +23,8 @@ unsigned char bytedata [10] = { 0x00,
 
 void timer0() interrupt 1
 	{
+		TF0 = 0;
+		IE = 0x00;
 	P0 = bytedata[n];
 	clkpin = ~clkpin;
 	n=n+1;
@@ -29,10 +32,10 @@ void timer0() interrupt 1
 		{
 					n=0;
 					resetpin=1;
-					delay(5);
+					delay(1);
 					resetpin=0;
 		}
-
+	IE = 0x86;
 	}
 
 void ext0() interrupt 2  //P3.3
@@ -54,16 +57,17 @@ void main()
 		IE = 0x86;    //Recheck register value
 		TMOD = 0x02;
 		TH0 = 0x00;
+		TL0 = 0x00;
 		TR0 = 1;
 		P3 = 0x0F;
 	/* Game Initialisation */
-		UpdateBit(0,0,1);
+/*		UpdateBit(0,0,1);
 		UpdateBit(1,0,1);
 		UpdateBit(2,0,1);
 		UpdateBit(3,0,1);
 		UpdateBlock(0,1,1);
 		UpdateBlock(3,4,1);
-		UpdateBlock(6,7,1);
+		UpdateBlock(6,7,1);  */
 	/////////////////////////////////////////////
 		while(1)
 			{
@@ -72,14 +76,18 @@ void main()
 
 				/*The game function is below*/
 
-				if(!Over)
+	/*			if(!Over)
 					{
 					fruit_disp();
 					Over = movement(inputPin);
 					delay(1500);
 					}
 				if(Over)
-					GameOver_Display();
+					GameOver_Display();   */
+				
+				for(i=0;i<8;i++)
+					UpdateColumn(i,1);
+				
 
 
 			}
